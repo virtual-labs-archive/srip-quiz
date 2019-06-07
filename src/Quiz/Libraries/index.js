@@ -34,13 +34,15 @@ function initialize_array() {
     );
 }
 
+var color_status = 0;
 function generateQuestionContainer(QID, AID, status) {
     var containerDiv = document.getElementById("quizBody");
     var parentDiv = document.createElement("div");
     var QuestionDiv = document.createElement("div");
     var br = document.createElement("BR");
     QuestionDiv.id = QID;       //Q1
-    QuestionDiv.className = "question";
+    parentDiv.style = "padding:2em 2em 2em 2em";
+    parentDiv.className = "question";
     parentDiv.appendChild(QuestionDiv);
     parentDiv.appendChild(br);
 
@@ -64,9 +66,7 @@ function generateQuestionContainer(QID, AID, status) {
     containerDiv.appendChild(parentDiv);
     if (status != 0 && status != TotalContainer) {
         var br = document.createElement("BR");
-        var hr = document.createElement("HR");
         containerDiv.insertBefore(br, parentDiv);
-        containerDiv.insertBefore(hr, parentDiv);
     }
 
 }
@@ -76,7 +76,8 @@ function generateResultContainer(RID, status) {
     var QuestionDiv = document.createElement("div");
     var br = document.createElement("BR");
     QuestionDiv.id = RID;       //R1
-    QuestionDiv.className = "question";
+    parentDiv.style = "padding:2em 2em 2em 2em";
+    parentDiv.className = "question";
     parentDiv.appendChild(QuestionDiv);
     parentDiv.appendChild(br);
 
@@ -94,9 +95,7 @@ function generateResultContainer(RID, status) {
     containerDiv.appendChild(parentDiv);
     if (status != 0 && status != TotalContainer) {
         var br = document.createElement("BR");
-        var hr = document.createElement("HR");
         containerDiv.insertBefore(br, parentDiv);
-        containerDiv.insertBefore(hr, parentDiv);
     }
 }
 function putContainers() {
@@ -129,6 +128,7 @@ function putResult() {
         document.getElementById(AnsID).innerHTML = ResultStatus + jsonData[RandomNumbers[i]].answer;
         if (UserAnswers[i] === -1) {
             document.getElementById(UserAnsID).innerHTML = "Question Skipped";
+            document.getElementById(UserAnsID).style = "background-color:white";
             document.getElementById(UserAnsID).style.color = "brown";
         }
         else {
@@ -148,9 +148,11 @@ function putResult() {
             }
             if (t1 !== t2) {
                 ResultStatus = "Your Answer is Incorrect : ";
+                document.getElementById(UserAnsID).style = "background-color:white";
                 document.getElementById(UserAnsID).style.color = "red";
             } else {
                 ResultStatus = "Your Answer is Correct : ";
+                document.getElementById(UserAnsID).style = "background-color:white";
                 document.getElementById(UserAnsID).style.color = "green";
             }
             document.getElementById(UserAnsID).innerHTML = ResultStatus + t1;
@@ -169,12 +171,13 @@ function removeChilds() {
     }
 }
 function startQuiz() {
+    document.getElementById("instructions").style.display = "none";
     document.getElementById("TaskTitle").innerHTML = "Quiz for DES/ TripleDES";
     document.getElementById("result").style.display = "none";
-    document.getElementById("displayResult").style.display = "none";
+    document.getElementById("result").style.display = "none";
     removeChilds();
     putContainers();
-    
+
     document.getElementById("startBtn").style.visibility = "hidden";
     document.getElementById("submitBtn").style.display = "block";
     putQuestion();
