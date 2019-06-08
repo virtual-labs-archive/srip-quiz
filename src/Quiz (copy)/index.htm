@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Quiz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="Libraries/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script type="text/javascript" src="Libraries/index.js"></script>
+</head>
+
+<body onload="load()" style="width:100%;height: 100%;">
+
+    <!-- Quiz header -->
+    <div class="container">
+        <div class="QuizHeader">
+            <div>
+                <h2 id="TaskTitle"> Quiz for DES/ TripleDES </h2>
+                <div> Quiz Contain 5 questions and there is no negative marking</div>
+                <div> This Quiz is created under the QUIZ UI Task of SRIP @ 2019.</div>
+                <div id="result" style="visibility: hidden;"></div>
+                <div id="startBtn">
+                    <button id="startBtn" type="button" class="buttonDecor" style="margin: 4px 2px; padding: 15px 32px;"
+                        onclick="startQuiz()">Start</button>
+                </div>
+            </div>
+        </div>
+        <div class="quiz-contents">
+            <div>
+                <!-- Quiz body -->
+
+                <div id="quizBody" class="hide"></div>
+
+                <div id="submitBtn" style="display: none; text-align: center;">
+                    <button type="button" class="buttonDecor" onclick="submitQuiz() ">Get Score</button>
+                </div>
+                <!-- Quiz Result -->
+
+                <div id="displayResult" class="hide"></div>
+                </br>
+
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
