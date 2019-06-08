@@ -39,6 +39,16 @@
     margin:0;
    
 }
+#instructions{
+    width:100%;
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+    
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
 .QuizHeader{
     margin: 0;
     padding: 0;
@@ -48,6 +58,17 @@
     border-bottom: 5px solid grey;
     color: black;
     background-color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+}
+.footer{
+    padding: 3em;
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+    border-top: 5px solid grey;
+    color: black;
+    background-color: whitesmoke;
+    font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
 }
 #result{

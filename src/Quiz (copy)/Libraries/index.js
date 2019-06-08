@@ -173,13 +173,12 @@ function removeChilds() {
     }
 }
 function startQuiz() {
-    // console.log("In start1");
+    document.getElementById("instructions").style.display = "none";
     document.getElementById("TaskTitle").innerHTML = "Quiz for DES/ TripleDES";
     document.getElementById("result").style.visibility = "hidden";
     document.getElementById("displayResult").style.display = "none";
     removeChilds();
     putContainers();
-    //console.log("In start2");
     document.getElementById("startBtn").style.visibility = "hidden";
     document.getElementById("submitBtn").style.display = "block";
     putQuestion();
