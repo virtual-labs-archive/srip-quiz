@@ -71,10 +71,9 @@ function generateQuestionContainer(QID, AID, status) {
     }
 
 }
-function generateResultContainer(RID,SId, status) {
+function generateResultContainer(RID, SId, status) {
     var containerDiv = document.getElementById("displayResult");
     var parentDiv = document.createElement("div");
-
     var spanS = document.createElement("SPAN");
     spanS.id = SId;     //S1
 
@@ -91,14 +90,14 @@ function generateResultContainer(RID,SId, status) {
         var AnswerDiv = document.createElement("div");
         AnswerDiv.className = "answer";
 
-        // var spanS = document.createElement("SPAN");
-        // spanS.id = SId.concat((i + 1).toString());     //S11
+        var spanS = document.createElement("I");
+        spanS.id = SId.concat((i + 1).toString());     //S11
 
         var spanR = document.createElement("SPAN");
         spanR.id = RID.concat((i + 1).toString());     //R11
 
-        // AnswerDiv.appendChild(spanS);
         AnswerDiv.appendChild(spanR);
+        AnswerDiv.appendChild(spanS);
         if (i == 3) {
             var hr = document.createElement("HR");
             parentDiv.appendChild(hr);
@@ -121,46 +120,52 @@ function putContainers() {
     var QId = "Q";
     var AId = "A";
     var RId = "R";
-    var SId="S";
+    var SId = "S";
     for (var i = 0; i < TotalContainer; i++) {
         var Qstring = QId.concat((i + 1).toString());
         var Astring = AId.concat((i + 1).toString());
         var Rstring = RId.concat((i + 1).toString());
         var Sstring = SId.concat((i + 1).toString());
         generateQuestionContainer(Qstring, Astring, i);
-        generateResultContainer(Rstring,Sstring, i);
+        generateResultContainer(Rstring, Sstring, i);
     }
 }
 
 function putResult() {
     var RID = "R";
     var QID = "Q";
-    var SID="S";
+    var SID = "S";
     for (var i = 0; i < TotalContainer; i++) {
-        var SymbolID= SID.concat((i + 1).toString());    //S1
+        var SymbolID = SID.concat((i + 1).toString());    //S1
         var TempQID = QID.concat((i + 1).toString());    //Q1
         var TempRID = RID.concat((i + 1).toString());   //R1
         var AnsID1 = TempRID.concat("1");   //R11
         var AnsID2 = TempRID.concat("2");    //R12
         var AnsID3 = TempRID.concat("3");    //R13
-        var UserAnsID=TempRID.concat("4");    //R14
+        var UserAnsID = TempRID.concat("4");    //R14
         var descriptionID = TempRID.concat("5");    //R15
 
         document.getElementById(TempRID).innerHTML = jsonData[RandomNumbers[i]].q;
-        document.getElementById(AnsID1).innerHTML =  jsonData[RandomNumbers[i]].opt1;
-        document.getElementById(AnsID2).innerHTML =  jsonData[RandomNumbers[i]].opt2;
+        document.getElementById(AnsID1).innerHTML = jsonData[RandomNumbers[i]].opt1;
+        document.getElementById(AnsID2).innerHTML = jsonData[RandomNumbers[i]].opt2;
         document.getElementById(AnsID3).innerHTML = jsonData[RandomNumbers[i]].opt3;
         document.getElementById(descriptionID).innerHTML = "Description -: " + jsonData[RandomNumbers[i]].description;
         document.getElementById(descriptionID).style.color = "grey";
 
         if (jsonData[RandomNumbers[i]].opt1 == jsonData[RandomNumbers[i]].answer) {
-            document.getElementById(AnsID1).innerHTML = "&#10003" + jsonData[RandomNumbers[i]].opt1;
+            document.getElementById(SymbolID.concat("1")).classList.add("fa");
+            document.getElementById(SymbolID.concat("1")).classList.add("fa-check");
+            document.getElementById(SymbolID.concat("1")).style.color = "green";
         }
-        if (jsonData[RandomNumbers[i]].opt2 == jsonData[RandomNumbers[i]].answer) {
-            document.getElementById(AnsID2).innerHTML = "&#10003" + jsonData[RandomNumbers[i]].opt2;
+        else if (jsonData[RandomNumbers[i]].opt2 == jsonData[RandomNumbers[i]].answer) {
+            document.getElementById(SymbolID.concat("2")).classList.add("fa");
+            document.getElementById(SymbolID.concat("2")).classList.add("fa-check");
+            document.getElementById(SymbolID.concat("2")).style.color = "green";
         }
-        if (jsonData[RandomNumbers[i]].opt3 == jsonData[RandomNumbers[i]].answer) {
-            document.getElementById(AnsID3).innerHTML = "&#10003" + jsonData[RandomNumbers[i]].opt3;
+        else if (jsonData[RandomNumbers[i]].opt3 == jsonData[RandomNumbers[i]].answer) {
+            document.getElementById(SymbolID.concat("3")).classList.add("fa");
+            document.getElementById(SymbolID.concat("3")).classList.add("fa-check");
+            document.getElementById(SymbolID.concat("3")).style.color = "green";
         }
 
         var t2 = jsonData[RandomNumbers[i]].answer;
@@ -176,14 +181,56 @@ function putResult() {
             t1 = document.getElementById(TempQID.concat("3")).innerHTML;
         }
         if (t1 !== t2) {
-            
-            document.getElementById(SymbolID).innerHTML="&#10005";
-            document.getElementById(SymbolID).style.color="red";
+
+            document.getElementById(SymbolID).innerHTML = "Wrong";
+            document.getElementById(SymbolID).style.color = "red";
         }
         else {
-            document.getElementById(SymbolID).innerHTML="&#10003";
-            document.getElementById(SymbolID).style.color="green";
+            document.getElementById(SymbolID).innerHTML = "Correct";
+            document.getElementById(SymbolID).style.color = "green";
         }
+
+
+        if (t1 == jsonData[RandomNumbers[i]].opt1) {
+
+            if (t1 == jsonData[RandomNumbers[i]].answer) {
+                document.getElementById(SymbolID.concat("1")).classList.add("fa");
+                document.getElementById(SymbolID.concat("1")).classList.add("fa-check");
+                document.getElementById(SymbolID.concat("1")).style.color = "green";
+            }
+            else {
+                document.getElementById(SymbolID.concat("1")).classList.add("fa");
+                document.getElementById(SymbolID.concat("1")).classList.add("fa-close");
+                document.getElementById(SymbolID.concat("1")).style.color = "red";
+            }
+
+        } else if (t1 == jsonData[RandomNumbers[i]].opt2) {
+
+            if (t1 == jsonData[RandomNumbers[i]].answer) {
+                document.getElementById(SymbolID.concat("2")).classList.add("fa");
+                document.getElementById(SymbolID.concat("2")).classList.add("fa-check");
+                document.getElementById(SymbolID.concat("2")).style.color = "green";
+            }
+            else {
+                document.getElementById(SymbolID.concat("2")).classList.add("fa");
+                document.getElementById(SymbolID.concat("2")).classList.add("fa-close");
+                document.getElementById(SymbolID.concat("2")).style.color = "red";
+            }
+
+        } else if (t1 == jsonData[RandomNumbers[i]].opt3) {
+
+            if (t1 == jsonData[RandomNumbers[i]].answer) {
+                document.getElementById(SymbolID.concat("3")).classList.add("fa");
+                document.getElementById(SymbolID.concat("3")).classList.add("fa-check");
+                document.getElementById(SymbolID.concat("3")).style.color = "green";
+            }
+            else {
+                document.getElementById(SymbolID.concat("3")).classList.add("fa");
+                document.getElementById(SymbolID.concat("3")).classList.add("fa-close");
+                document.getElementById(SymbolID.concat("3")).style.color = "red";
+            }
+        }
+
         document.getElementById(UserAnsID).innerHTML = "Your Answer -: " + t1;
 
     }
@@ -201,7 +248,21 @@ function removeChilds() {
         rDiv.removeChild(rDiv.firstChild);
     }
 }
+function startQuizinit(){
+    document.getElementById("startBtnInit").style.display="none";
+
+    document.getElementById("instructions").style.display = "none";
+    document.getElementById("TaskTitle").innerHTML = "Quiz for DES/ TripleDES";
+    document.getElementById("result").style.visibility = "hidden";
+    document.getElementById("displayResult").style.display = "none";
+    removeChilds();
+    putContainers();
+    document.getElementById("submitBtn").style.display = "block";
+    putQuestion();
+    document.getElementById("quizBody").style.display = "block";
+}
 function startQuiz() {
+    
     document.getElementById("instructions").style.display = "none";
     document.getElementById("TaskTitle").innerHTML = "Quiz for DES/ TripleDES";
     document.getElementById("result").style.visibility = "hidden";
@@ -231,8 +292,8 @@ function isSubmittable() {
         else if (document.getElementById(TempAID3).checked) {
             status = 1;
         }
-        else{
-            status=0;
+        else {
+            status = 0;
         }
     }
     return status;

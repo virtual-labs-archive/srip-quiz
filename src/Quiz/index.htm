@@ -5,6 +5,7 @@
     <title>Quiz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="Libraries/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script type="text/javascript" src="Libraries/index.js"></script>
 </head>
@@ -18,9 +19,9 @@
                 <div>
                     <h2 id="TaskTitle"> Quiz for DES/ TripleDES </h2>
                     <div id="result" style="visibility: hidden;"></div>
-                    <div id="startBtn">
+                    <div id="startBtn" style="visibility: hidden;">
                         <button id="startBtn" type="button" class="buttonDecor"
-                            style="margin: 4px 2px; padding: 15px 32px;" onclick="startQuiz()">Start</button>
+                            style="margin: 4px 2px; padding: 15px 32px;" onclick="startQuiz()">Start Again</button>
                     </div>
                 </div>
             </div>
@@ -34,6 +35,10 @@
                     <li>After submission you can tally your answers</li>
                     <li>Quiz can be restarted again only after submisson or on reloading.</li>
                 </ul>
+            </div>
+            <div id="startBtn" style="text-align: center">
+                <button id="startBtnInit" type="button" class="buttonDecor"
+                    style="margin: 4px 2px; padding: 15px 32px;" onclick="startQuizinit()">Test YourSelf</button>
             </div>
             <div class="quiz-contents">
                 <div>

@@ -6,7 +6,7 @@
             "opt2": "Rounds",
             "opt3": "Cipher",
             "answer": "DES function",
-            "description": "it is the answer, search online"
+            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
         },
         {
             "q": "Data Encryption Standard (DES), was designed by ?",
@@ -14,7 +14,7 @@
             "opt2": "Intel",
             "opt3": "none",
             "answer": "IBM",
-            "description": "it is the answer, search online"
+            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
         },
         {
             "q": " In symmetric key cryptography, key used by sender and receiver is ?",
@@ -22,7 +22,7 @@
             "opt2": "different",
             "opt3": "None",
             "answer": "shared",
-            "description": "it is the answer, search online"
+            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
         },
         {
             "q": "Ciphers of today are called ?",
@@ -30,7 +30,7 @@
             "opt2": "Round ciphers",
             "opt3": "Transposition Cipher",
             "answer": "Round ciphers",
-            "description": "it is the answer, search online"
+            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
         },
         {
             "q": "Symmetric-key cryptography started thousands of years ago when people needed to exchange ?",
@@ -38,7 +38,7 @@
             "opt2": "Secrets",
             "opt3": "Packets",
             "answer": "Secrets",
-            "description": "it is the answer, search online"
+            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
         },
         {
             "q": "Relationship between a character in plaintext to a character is ?",
@@ -46,7 +46,7 @@
             "opt2": "one-to-many relationship",
             "opt3": "many-to-many relationship",
             "answer": "one-to-many relationship",
-            "description": "it is the answer, search online"
+            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
         },
         {
             "q": "A transposition cipher reorders (permutes) symbols in a ?",
@@ -54,7 +54,7 @@
             "opt2": "block of symbols",
             "opt3": "block of signals",
             "answer": "block of symbols",
-            "description": "it is the answer, search online"
+            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
         },
         {
             "q": "Cipher feedback (CFB) mode was created for those situations in which we need to send or receive r bits of ?",
@@ -62,7 +62,7 @@
             "opt2": "Pixels",
             "opt3": "Data",
             "answer": "Data",
-            "description": "it is the answer, search online"
+            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
         },
         {
             "q": "Cipher which uses exclusive-or operation as defined in computer science is called ?",
@@ -70,7 +70,7 @@
             "opt2": "XOR cipher",
             "opt3": "cipher",
             "answer": "XOR cipher",
-            "description": "it is the answer, search online"
+            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
         },
         {
             "q": "Cryptography can provide ?",
@@ -78,7 +78,7 @@
             "opt2": "nonrepudiation of messages",
             "opt3": "All of them",
             "answer": "All of them",
-            "description": "it is the answer, search online"
+            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
         },
         {
             "q": "Shift cipheris sometimes referred to as the ?",
@@ -86,7 +86,7 @@
             "opt2": "Julia cipher",
             "opt3": "plain cipher",
             "answer": "Caesar cipher",
-            "description": "it is the answer, search online"
+            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
         }
     ]
 }

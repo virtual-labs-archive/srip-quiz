@@ -42,12 +42,13 @@
     margin:0;
    
 }
+
 #instructions{
     width:80%;
     margin-left: 10%;   
     font-family: 'Times New Roman', Times, serif;
-    margin-top: 5em;
-    margin-bottom: 5em;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 .QuizHeader{
     margin: 0;
@@ -60,6 +61,7 @@
     background-color: #176696;
     font-family: 'Times New Roman', Times, serif;
     border-radius: 5px;
+    box-shadow: 2px 10px 5px 3px #888888;
 }
 .footer{
     padding: 3em;
@@ -72,6 +74,7 @@
     font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
     border-radius: 5px;
+    box-shadow: 2px 10px 5px 3px #888888;
 }
 #result{
     padding:10px;
