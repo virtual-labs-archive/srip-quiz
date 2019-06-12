@@ -318,7 +318,7 @@ function startQuizinit() {
 function startQuiz() {
 
     document.getElementById("instructions").style.display = "none";
-    document.getElementById("TaskTitle").innerHTML = "Quiz for DES/ TripleDES";
+    document.getElementById("TaskTitle").innerHTML = "Quiz for Cryptography";
     document.getElementById("result").style.visibility = "hidden";
     document.getElementById("displayResult").style.display = "none";
     removeChilds();
