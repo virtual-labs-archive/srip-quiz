@@ -1,92 +1,116 @@
 {
     "artciles": [
         {
-            "q": "Heart of Data Encryption Standard (DES), is the ?",
-            "opt1": "DES function",
-            "opt2": "Rounds",
-            "opt3": "Cipher",
-            "answer": "DES function",
-            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
+            "q": "Which of the following are used to generate a message digest by the network security protocols?",
+            "opt1": "RSA and DES",
+            "opt2": "SHA-1 and  DES",
+            "opt3": "SHA-1 and MD5",
+            "answer": "SHA-1 and MD5",
+            "description": "SHA 1 – Secure Hash Algorithm 1, or SHA 1 is a cryptographic hash function. It produces a 160 bit (20 byte) hash value (message digest).MD5 – Message Digest 5, or MD5 is a widely used cryptographic hash function that produces a 128 bit hash value (message digest). SHA 1 and MD5 are used to generate a message digest by the network security protocols "
         },
         {
-            "q": "Data Encryption Standard (DES), was designed by ?",
-            "opt1": "IBM",
-            "opt2": "Intel",
-            "opt3": "none",
-            "answer": "IBM",
-            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
+            "q": "Suppose that everyone in a group of N people wants to communicate secretly with the N–1 others using symmetric key cryptographic system. The communication between any two persons should not be decodable by the others in the group. The number of keys required in the system as a whole to satisfy the confidentiality requirement is ?",
+            "opt1": "2N",
+            "opt2": "N(N-1)",
+            "opt3": "N(N-1)/2",
+            "answer": "N(N-1)/2",
+            "description": "In Symmetric Key Cryptography, access of key is with both the parties. It implies every person needs to communicate N-1 other users using different keys i.e 1+2+3...N-2+N-1 This is like number of edges needed in a complete graph with N vertices is N(N-1)/2. "
         },
         {
-            "q": " In symmetric key cryptography, key used by sender and receiver is ?",
-            "opt1": "shared",
-            "opt2": "different",
-            "opt3": "None",
-            "answer": "shared",
-            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
+            "q": " Anarkali digitally signs a message and sends it to Salim. Verification of the signature by Salim requires ?",
+            "opt1": "Anarkali public Key",
+            "opt2": "Salim’s public key",
+            "opt3": "Anarkali’s private key",
+            "answer": "Anarkali public Key",
+            "description": "Sender uses its private key to digitally sign a document. Receiver uses public key of sender to verify."
         },
         {
-            "q": "Ciphers of today are called ?",
-            "opt1": "Substitution Cipher",
-            "opt2": "Round ciphers",
-            "opt3": "Transposition Cipher",
-            "answer": "Round ciphers",
-            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
+            "q": "Consider the following two statements: i. A hash function (these are often used for computing digital signatures) is an injective function. A. encryption technique such as DES performs a permutation on the elements of its input alphabet. Which one of the following options is valid for the above two statements? ?",
+            "opt1": "Both are false",
+            "opt2": "Statement (i) is true and the other is false",
+            "opt3": "Statement (ii) is true and the other is false",
+            "answer": "Statement (ii) is true and the other is false",
+            "description": "Injective Function: A function F(X) is said to be injective if it has one-to-one mapping. Statement 1: Hash function is an injective function Statement 2: DES Encryption technique performs a permutation on the elements of its input alphabet  1) Generally, a hash function H(X) is mapping from a larger set to a predefined output set For example, let H(X) = (X)%5 The above function H(X) is not injective because Let X1 = 10, X2 = 15 H(10) = H(15) = 0 As the output of H(X1) = H(X2) where X1!= X2 => H(X) is many-to-one function. Statement 1 is false.2) In DES encryption scheme, it performs P-Box permutation. Statement 1 is false, Statement 2 is true."
         },
         {
-            "q": "Symmetric-key cryptography started thousands of years ago when people needed to exchange ?",
-            "opt1": "Files",
-            "opt2": "Secrets",
-            "opt3": "Packets",
-            "answer": "Secrets",
-            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
+            "q": "The minimum positive integer p such that 3p modulo 17 = 1 is ?",
+            "opt1": "5",
+            "opt2": "12",
+            "opt3": "16",
+            "answer": "16",
+            "description": "Either use Fermat's Little Theorem or put the value of p and get the answer"
         },
         {
-            "q": "Relationship between a character in plaintext to a character is ?",
-            "opt1": "many-to-one relationship",
-            "opt2": "one-to-many relationship",
-            "opt3": "many-to-many relationship",
-            "answer": "one-to-many relationship",
-            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
+            "q": "Exponentiation is a heavily used operation in public key cryptography. Which of the following options is the tightest upper bound on the number of multiplications required to compute bn mod m,0≤b,n≤m ?",
+            "opt1": "O(logn)",
+            "opt2": "O(√n)",
+            "opt3": "O(n/logn)",
+            "answer": "O(logn)",
+            "description": "This Problem can be solved using Divide And Conquer Paradigm .Recurrence Relation for computing the time complexity of the divide and conquer algorithm is T(n) = T(n/2) + constant = (log2n) "
         },
         {
-            "q": "A transposition cipher reorders (permutes) symbols in a ?",
-            "opt1": "block of packets",
-            "opt2": "block of symbols",
-            "opt3": "block of signals",
-            "answer": "block of symbols",
-            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
+            "q": "The total number of keys required for a set of n individuals to be able to communicate with each other using secret key and public key crypto-systems, respectively are ?",
+            "opt1": "n(n-1) and 2n",
+            "opt2": "2n and ((n(n - 1))/2)",
+            "opt3": "((n(n - 1))/2) and 2n",
+            "answer": "((n(n - 1))/2) and 2n",
+            "description": "If there are 2 individuals then total number of distinct keys for communication will be 1 Similarly for 3 individuals we will need 2 distinct keys. Like ways for n users we will need n-1 keys So, total number of keys will be 1+2+3+…n-1 = (n (n-1)/2) Now for a public key encryption scheme every individual will have two keys one public key and one private key. Therefore, for n individuals to communicate we will have 2* n keys Hence, the correct answer will be ((n(n – 1))/2) and 2n."
         },
         {
-            "q": "Cipher feedback (CFB) mode was created for those situations in which we need to send or receive r bits of ?",
-            "opt1": "Frames",
-            "opt2": "Pixels",
-            "opt3": "Data",
-            "answer": "Data",
-            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
+            "q": "In a RSA cryptosystem, a participant A uses two prime numbers p=13 and q=11 to generate his public and private keys. If the public key of A is 37, then the private key of A is ?",
+            "opt1": "13",
+            "opt2": "35",
+            "opt3": "17",
+            "answer": "13",
+            "description": "Public Key = (n, e) Private Key = (n, d) n = pq = 143 z = (p-1)(q-1) = 120 Given e = 37 Using ed mod z = 1 Candidates for 1 mod z = 121 241 361 481 601 721 841 961 1081 1201 1321 1441 1561 1681 1801 1921 2041 2161 2281 2401 2521 2641 2761 2881 3001 3121 3241 3361 3481 3601 Smallest number which is a multiple of 37 is 481 and 481/37 = 13 So the private key is 13 ."
         },
         {
-            "q": "Cipher which uses exclusive-or operation as defined in computer science is called ?",
-            "opt1": "Caesar cipher",
-            "opt2": "XOR cipher",
-            "opt3": "cipher",
-            "answer": "XOR cipher",
-            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
+            "q": "Pretty Good Privacy (PGP) is used in ?",
+            "opt1": "Browser security",
+            "opt2": "FTP security",
+            "opt3": "Email security",
+            "answer": "Email security",
+            "description": "PGP is a an encryption phenomena that provide cryptographic privacy and authentication for data communication over e-mails. It generates a public key to encrypt a message at sender's end and private key to decrypt a message at receiver's end allowing us to send files and messages securely over internet. OpenPGP is an email encryption standard. It uses Digital Signatures to provide authentication and integrity checking basically to check if the message is actually sent by the person or entity claimed to be the sender."
         },
         {
-            "q": "Cryptography can provide ?",
-            "opt1": "entity authentication",
-            "opt2": "nonrepudiation of messages",
-            "opt3": "All of them",
-            "answer": "All of them",
-            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
+            "q": "An attacker sits between the sender and receiver and captures the information and retransmits to the receiver after some time without altering the information. This attack is called as ?",
+            "opt1": "Denial of service attack",
+            "opt2": "Masquarade attack",
+            "opt3": "Simple attack",
+            "answer": "Denial of service attack",
+            "description": "An attacker sits between the sender and receiver and captures the information and re-transmits to the receiver after some time without altering the information. This attack is called as Denial of service attack."
         },
         {
-            "q": "Shift cipheris sometimes referred to as the ?",
-            "opt1": "Caesar cipher",
-            "opt2": "Julia cipher",
-            "opt3": "plain cipher",
-            "answer": "Caesar cipher",
-            "description": "Lorem ipsum nullam libero turpis nullam mi ut a, tempor quisque malesuada ac molestie habitasse sollicitudin himenaeos eros, magna quam platea iaculis nulla ac blandit torquent sapien lorem cubilia elit posuere consequat neque."
+            "q": "An example of poly-alphabetic substitution is ?",
+            "opt1": "P-box",
+            "opt2": "S-box",
+            "opt3": "Vigenere cipher",
+            "answer": "Vigenere cipher",
+            "description": "Using more than one alphabet and switching between them systematically to encrypt data is called a polyalphabetic substitution cipher. The Vigenere cipher is a method of encrypting alphabetic text by using a series of interwoven Caesar ciphers based on the letters of a keyword. It is a form of polyalphabetic substitution."
+        },
+        {
+            "q": "A message 'COMPUTERNETWORK' encrypted (ignore quotes) using columnar transposition cipher with a key 'LAYER'.The encrypted message is ?",
+            "opt1": "CTTOEWMROPNRUEK",
+            "opt2": "MROUEKCTTPNROEW",
+            "opt3": "OEWPNRCTTUEKMRO",
+            "answer": "OEWPNRCTTUEKMRO",
+            "description": "According to columnar transposition cipher with key LAYER: 5 element in key so there will be 5 column in every row and write down the order in key alphabetically. L A Y E R 3 1 5 2 4 C O M P U T E R N E T W O R K Now encode it in column wise manner from column 1 to column 5 according to order defined by key. The Encrypted message will be OEWPNRCTTUEKMRO. For more information on columnar transposition cipher ."
+        },
+        {
+            "q": "The standard for certificates used on internet is ?",
+            "opt1": "X.25",
+            "opt2": "X.301",
+            "opt3": "X.509",
+            "answer": "X.509",
+            "description": "In cryptography, X.509 is a standard that defines the format of public key certificates. X.509 certificates are used in many Internet protocols, including TLS/SSL, which is the basis for HTTPS, the secure protocol for browsing the web. ."
+        },
+        {
+            "q": "Which of the following encryption algorithms is based on the Fiestal struture ?",
+            "opt1": "Advanced Encryption Standard",
+            "opt2": "RSA public key cryptographic algorithm",
+            "opt3": "Data Encryption Standard",
+            "answer": "Data Encryption Standard",
+            "description": "Feistel Cipher is not a specific scheme of block cipher, it is a design model from which many different block ciphers are derived. DES is just one example of a Feistel Cipher. A cryptographic system based on Feistel cipher structure uses the same algorithm for both encryption and decryption."
         }
     ]
 }

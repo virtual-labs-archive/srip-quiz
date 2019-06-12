@@ -150,7 +150,7 @@ function putResult() {
         document.getElementById(AnsID2).innerHTML = jsonData[RandomNumbers[i]].opt2;
         document.getElementById(AnsID3).innerHTML = jsonData[RandomNumbers[i]].opt3;
         document.getElementById(descriptionID).innerHTML = "Description -: " + jsonData[RandomNumbers[i]].description;
-        document.getElementById(descriptionID).style.color = "grey";
+        document.getElementById(descriptionID).style.color = "#D2691E";
 
         if (jsonData[RandomNumbers[i]].opt1 == jsonData[RandomNumbers[i]].answer) {
             document.getElementById(SymbolID.concat("1")).classList.add("fa");
@@ -308,7 +308,8 @@ function submitQuiz() {
         document.getElementById("startBtn").style.visibility = "visible";
         submitAnswers();
         document.getElementById("quizBody").style.display = "none";
-        document.getElementById("result").innerHTML = (CorrectCount).toString() + " out of " + TotalContainer;
+        var t = document.createTextNode("Your Score is : "+(CorrectCount).toString() + " out of " + TotalContainer);
+        document.getElementById("result").appendChild(t);
         putResult();
         document.getElementById("TaskTitle").innerHTML = "Quiz Results";
         document.getElementById("result").style.visibility = "visible";
