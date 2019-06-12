@@ -40,6 +40,7 @@ function generateQuestionContainer(QID, AID, status) {
     var containerDiv = document.getElementById("quizBody");
     var parentDiv = document.createElement("div");
     var QuestionDiv = document.createElement("div");
+
     var hr = document.createElement("HR");
     QuestionDiv.id = QID;       //Q1
     parentDiv.style = "padding:2em 2em 2em 2em";
@@ -58,7 +59,7 @@ function generateQuestionContainer(QID, AID, status) {
         input.name = QID;     //Q1
 
         var spanI = document.createElement("SPAN");
-        spanI.className="labelcheckmark";
+        spanI.className = "labelcheckmark";
 
         var span = document.createElement("SPAN");
         span.id = QID.concat((i + 1).toString());     //Q11
@@ -67,7 +68,7 @@ function generateQuestionContainer(QID, AID, status) {
         OptionDiv.appendChild(spanI);
         OptionDiv.appendChild(span);
         parentDiv.appendChild(OptionDiv);
-        if(i!==0){
+        if (i !== 0) {
             var br = document.createElement("BR");
             parentDiv.insertBefore(br, OptionDiv);
         }
@@ -82,7 +83,7 @@ function generateQuestionContainer(QID, AID, status) {
 }
 function generateResultContainer(RID, SId, status) {
     var containerDiv = document.getElementById("displayResult");
-    var tempDiv=document.createElement("div");
+    var tempDiv = document.createElement("div");
     var parentDiv = document.createElement("div");
     var divS = document.createElement("div");
     divS.id = SId;     //S1
@@ -97,23 +98,29 @@ function generateResultContainer(RID, SId, status) {
     tempDiv.appendChild(hr);
     parentDiv.appendChild(tempDiv);
 
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 4; i++) {
         var AnswerDiv = document.createElement("div");
         AnswerDiv.className = "answer";
+
+        if (i == 3) {
+            AnswerDiv.className = "descript";
+            var x = document.createElement("H4");
+            var t = document.createTextNode("Explanation :- ");
+            x.appendChild(t);
+            var hr = document.createElement("HR");
+            AnswerDiv.appendChild(x);
+            AnswerDiv.appendChild(hr);
+        }
 
         var spanS = document.createElement("I");
         spanS.id = SId.concat((i + 1).toString());     //S11
 
         var spanR = document.createElement("SPAN");
         spanR.id = RID.concat((i + 1).toString());     //R11
-        spanR.className="paddingClass";
+        spanR.className = "paddingClass";
 
         AnswerDiv.appendChild(spanR);
         AnswerDiv.appendChild(spanS);
-        if (i == 3) {
-            var hr = document.createElement("HR");
-            parentDiv.appendChild(hr);
-        }
         parentDiv.appendChild(AnswerDiv);
     }
 
@@ -154,15 +161,15 @@ function putResult() {
         var AnsID1 = TempRID.concat("1");   //R11
         var AnsID2 = TempRID.concat("2");    //R12
         var AnsID3 = TempRID.concat("3");    //R13
-        var UserAnsID = TempRID.concat("4");    //R14
-        var descriptionID = TempRID.concat("5");    //R15
+        var descriptionID = TempRID.concat("4");    //R14
 
         document.getElementById(TempRID).innerHTML = jsonData[RandomNumbers[i]].q;
         document.getElementById(AnsID1).innerHTML = jsonData[RandomNumbers[i]].opt1;
         document.getElementById(AnsID2).innerHTML = jsonData[RandomNumbers[i]].opt2;
         document.getElementById(AnsID3).innerHTML = jsonData[RandomNumbers[i]].opt3;
-        document.getElementById(descriptionID).innerHTML = "Explanation -: " + jsonData[RandomNumbers[i]].description;
-        document.getElementById(descriptionID).style.color = "#D2691E";
+        document.getElementById(descriptionID).innerHTML = jsonData[RandomNumbers[i]].description;
+        document.getElementById(descriptionID).style.textDecoration = "none";
+        document.getElementById(descriptionID).style.color = "grey";
 
         if (jsonData[RandomNumbers[i]].opt1 == jsonData[RandomNumbers[i]].answer) {
             document.getElementById(SymbolID.concat("1")).classList.add("fa");
@@ -195,12 +202,12 @@ function putResult() {
         if (t1 !== t2) {
 
             document.getElementById(SymbolID).innerHTML = "Incorrect";
-            document.getElementById(SymbolID).className="resultStatus";
+            document.getElementById(SymbolID).className = "resultStatus";
             document.getElementById(SymbolID).style.color = "red";
         }
         else {
             document.getElementById(SymbolID).innerHTML = "Correct";
-            document.getElementById(SymbolID).className="resultStatus";
+            document.getElementById(SymbolID).className = "resultStatus";
             document.getElementById(SymbolID).style.color = "green";
         }
 
@@ -244,9 +251,6 @@ function putResult() {
                 document.getElementById(SymbolID.concat("3")).style.color = "red";
             }
         }
-
-        document.getElementById(UserAnsID).innerHTML = "Your Answer -: " + t1;
-
     }
 
 }
@@ -261,11 +265,11 @@ function removeChilds() {
     while (rDiv.hasChildNodes()) {
         rDiv.removeChild(rDiv.firstChild);
     }
-    var resultdiv=document.getElementById("result");
+    var resultdiv = document.getElementById("result");
     resultdiv.removeChild(resultdiv.childNodes[2]);
 }
-function startQuizinit(){
-    document.getElementById("startBtnInit").style.display="none";
+function startQuizinit() {
+    document.getElementById("startBtnInit").style.display = "none";
 
     document.getElementById("instructions").style.display = "none";
     document.getElementById("TaskTitle").innerHTML = "Quiz for Cryptography";
@@ -278,7 +282,7 @@ function startQuizinit(){
     document.getElementById("quizBody").style.display = "block";
 }
 function startQuiz() {
-    
+
     document.getElementById("instructions").style.display = "none";
     document.getElementById("TaskTitle").innerHTML = "Quiz for DES/ TripleDES";
     document.getElementById("result").style.visibility = "hidden";
@@ -324,7 +328,7 @@ function submitQuiz() {
         document.getElementById("startBtn").style.visibility = "visible";
         submitAnswers();
         document.getElementById("quizBody").style.display = "none";
-        var t = document.createTextNode("Your Score is : "+(CorrectCount).toString() + " out of " + TotalContainer);
+        var t = document.createTextNode("Your Score is : " + (CorrectCount).toString() + " out of " + TotalContainer);
         document.getElementById("result").appendChild(t);
         putResult();
         document.getElementById("TaskTitle").innerHTML = "Quiz Results";
