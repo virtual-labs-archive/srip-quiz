@@ -81,7 +81,7 @@ function generateQuestionContainer(QID, AID, status) {
     }
 
 }
-function generateResultContainer(RID, SId, status) {
+function generateResultContainer(RID, SId, CId, status) {
     var containerDiv = document.getElementById("displayResult");
     var tempDiv = document.createElement("div");
     var parentDiv = document.createElement("div");
@@ -99,28 +99,48 @@ function generateResultContainer(RID, SId, status) {
     parentDiv.appendChild(tempDiv);
 
     for (var i = 0; i < 4; i++) {
-        var AnswerDiv = document.createElement("div");
-        AnswerDiv.className = "answer";
+        var AnswerDiv = document.createElement("LABEL");
+        AnswerDiv.classList.add("answer");
+        AnswerDiv.classList.add("labelContainer");
+        if (i !== 3) {
+            var input = document.createElement("INPUT");
+            input.setAttribute("type", "radio");
+            input.disabled = true;
+            input.id = CId.concat((i + 1).toString());  //C11
+
+            var spanI = document.createElement("SPAN");
+            spanI.className = "labelcheckmark";
+            AnswerDiv.appendChild(input);
+            AnswerDiv.appendChild(spanI);
+
+            var spanS = document.createElement("I");
+            spanS.id = SId.concat((i + 1).toString());     //S11
+
+            var spanR = document.createElement("SPAN");
+            spanR.id = RID.concat((i + 1).toString());     //R11
+            spanR.className = "paddingClass";
+
+            AnswerDiv.appendChild(spanR);
+            AnswerDiv.appendChild(spanS);
+        }
 
         if (i == 3) {
+            AnswerDiv = document.createElement("div");
             AnswerDiv.className = "descript";
+
             var x = document.createElement("H4");
             var t = document.createTextNode("Explanation :- ");
             x.appendChild(t);
             var hr = document.createElement("HR");
             AnswerDiv.appendChild(x);
             AnswerDiv.appendChild(hr);
+
+            var spanR = document.createElement("div");
+            spanR.id = RID.concat((i + 1).toString());     //R11
+            AnswerDiv.appendChild(spanR);
+
         }
 
-        var spanS = document.createElement("I");
-        spanS.id = SId.concat((i + 1).toString());     //S11
-
-        var spanR = document.createElement("SPAN");
-        spanR.id = RID.concat((i + 1).toString());     //R11
-        spanR.className = "paddingClass";
-
-        AnswerDiv.appendChild(spanR);
-        AnswerDiv.appendChild(spanS);
         parentDiv.appendChild(AnswerDiv);
     }
 
@@ -140,13 +160,15 @@ function putContainers() {
     var AId = "A";
     var RId = "R";
     var SId = "S";
+    var CId = "C";
     for (var i = 0; i < TotalContainer; i++) {
         var Qstring = QId.concat((i + 1).toString());
         var Astring = AId.concat((i + 1).toString());
         var Rstring = RId.concat((i + 1).toString());
         var Sstring = SId.concat((i + 1).toString());
+        var Cstring = CId.concat((i + 1).toString());
         generateQuestionContainer(Qstring, Astring, i);
-        generateResultContainer(Rstring, Sstring, i);
+        generateResultContainer(Rstring, Sstring, Cstring, i);
     }
 }
 
@@ -154,6 +176,7 @@ function putResult() {
     var RID = "R";
     var QID = "Q";
     var SID = "S";
+    var CID = "C";
     for (var i = 0; i < TotalContainer; i++) {
         var SymbolID = SID.concat((i + 1).toString());    //S1
         var TempQID = QID.concat((i + 1).toString());    //Q1
@@ -162,6 +185,8 @@ function putResult() {
         var AnsID2 = TempRID.concat("2");    //R12
         var AnsID3 = TempRID.concat("3");    //R13
         var descriptionID = TempRID.concat("4");    //R14
+        var TempCID = CID.concat((i + 1).toString());   //C1
+
 
         document.getElementById(TempRID).innerHTML = jsonData[RandomNumbers[i]].q;
         document.getElementById(AnsID1).innerHTML = jsonData[RandomNumbers[i]].opt1;
@@ -214,6 +239,9 @@ function putResult() {
 
         if (t1 == jsonData[RandomNumbers[i]].opt1) {
 
+            var checkedInputID = TempCID.concat("1"); //C11
+            document.getElementById(checkedInputID).checked = true;
+
             if (t1 == jsonData[RandomNumbers[i]].answer) {
                 document.getElementById(SymbolID.concat("1")).classList.add("fa");
                 document.getElementById(SymbolID.concat("1")).classList.add("fa-check");
@@ -227,6 +255,9 @@ function putResult() {
 
         } else if (t1 == jsonData[RandomNumbers[i]].opt2) {
 
+            var checkedInputID = TempCID.concat("2"); //C11
+            document.getElementById(checkedInputID).checked = true;
+
             if (t1 == jsonData[RandomNumbers[i]].answer) {
                 document.getElementById(SymbolID.concat("2")).classList.add("fa");
                 document.getElementById(SymbolID.concat("2")).classList.add("fa-check");
@@ -239,6 +270,9 @@ function putResult() {
             }
 
         } else if (t1 == jsonData[RandomNumbers[i]].opt3) {
+
+            var checkedInputID = TempCID.concat("3"); //C11
+            document.getElementById(checkedInputID).checked = true;
 
             if (t1 == jsonData[RandomNumbers[i]].answer) {
                 document.getElementById(SymbolID.concat("3")).classList.add("fa");

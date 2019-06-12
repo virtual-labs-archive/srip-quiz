@@ -87,7 +87,8 @@
 
 
 .question{
-    /* background-color: antiquewhite; */
+    line-height: 1.6;
+    word-spacing: 3px;
     margin: 1em;
     background-color: white;
     color: #176696;
@@ -136,8 +137,11 @@ div.question:hover {
     padding-right: 10px;
 }
 .descript{
+    word-spacing: 3px;
+    line-height: 1.6;
     background-color: #ecfad1;
     padding: 3em;
     padding-top: 1em;
     margin-top: 1em;
+    box-shadow: 0 0 4px 0 rgba(17,22,26,.16),0 2px 4px 0 rgba(17,22,26,.08),0 4px 8px 0 rgba(17,22,26,.08);
 }
