@@ -48,20 +48,29 @@ function generateQuestionContainer(QID, AID, status) {
     parentDiv.appendChild(hr);
 
     for (var i = 0; i < 3; i++) {
-        var OptionDiv = document.createElement("div");
-        OptionDiv.className = "answer";
+        var OptionDiv = document.createElement("LABEL");
+        OptionDiv.classList.add("answer");
+        OptionDiv.classList.add("labelContainer");
 
         var input = document.createElement("INPUT");
         input.setAttribute("type", "radio");
         input.id = AID.concat((i + 1).toString());    //A11
         input.name = QID;     //Q1
 
+        var spanI = document.createElement("SPAN");
+        spanI.className="labelcheckmark";
+
         var span = document.createElement("SPAN");
         span.id = QID.concat((i + 1).toString());     //Q11
 
         OptionDiv.appendChild(input);
+        OptionDiv.appendChild(spanI);
         OptionDiv.appendChild(span);
         parentDiv.appendChild(OptionDiv);
+        if(i!==0){
+            var br = document.createElement("BR");
+            parentDiv.insertBefore(br, OptionDiv);
+        }
     }
 
     containerDiv.appendChild(parentDiv);
@@ -73,18 +82,20 @@ function generateQuestionContainer(QID, AID, status) {
 }
 function generateResultContainer(RID, SId, status) {
     var containerDiv = document.getElementById("displayResult");
+    var tempDiv=document.createElement("div");
     var parentDiv = document.createElement("div");
-    var spanS = document.createElement("SPAN");
-    spanS.id = SId;     //S1
+    var divS = document.createElement("div");
+    divS.id = SId;     //S1
 
     var QuestionDiv = document.createElement("div");
     var hr = document.createElement("HR");
     QuestionDiv.id = RID;       //R1
     parentDiv.style = "padding:2em 2em 2em 2em";
     parentDiv.className = "question";
-    parentDiv.appendChild(spanS);
-    parentDiv.appendChild(QuestionDiv);
-    parentDiv.appendChild(hr);
+    tempDiv.appendChild(divS);
+    tempDiv.appendChild(QuestionDiv);
+    tempDiv.appendChild(hr);
+    parentDiv.appendChild(tempDiv);
 
     for (var i = 0; i < 5; i++) {
         var AnswerDiv = document.createElement("div");
@@ -95,6 +106,7 @@ function generateResultContainer(RID, SId, status) {
 
         var spanR = document.createElement("SPAN");
         spanR.id = RID.concat((i + 1).toString());     //R11
+        spanR.className="paddingClass";
 
         AnswerDiv.appendChild(spanR);
         AnswerDiv.appendChild(spanS);
@@ -149,7 +161,7 @@ function putResult() {
         document.getElementById(AnsID1).innerHTML = jsonData[RandomNumbers[i]].opt1;
         document.getElementById(AnsID2).innerHTML = jsonData[RandomNumbers[i]].opt2;
         document.getElementById(AnsID3).innerHTML = jsonData[RandomNumbers[i]].opt3;
-        document.getElementById(descriptionID).innerHTML = "Description -: " + jsonData[RandomNumbers[i]].description;
+        document.getElementById(descriptionID).innerHTML = "Explanation -: " + jsonData[RandomNumbers[i]].description;
         document.getElementById(descriptionID).style.color = "#D2691E";
 
         if (jsonData[RandomNumbers[i]].opt1 == jsonData[RandomNumbers[i]].answer) {
@@ -182,11 +194,13 @@ function putResult() {
         }
         if (t1 !== t2) {
 
-            document.getElementById(SymbolID).innerHTML = "Wrong";
+            document.getElementById(SymbolID).innerHTML = "Incorrect";
+            document.getElementById(SymbolID).className="resultStatus";
             document.getElementById(SymbolID).style.color = "red";
         }
         else {
             document.getElementById(SymbolID).innerHTML = "Correct";
+            document.getElementById(SymbolID).className="resultStatus";
             document.getElementById(SymbolID).style.color = "green";
         }
 
@@ -247,12 +261,14 @@ function removeChilds() {
     while (rDiv.hasChildNodes()) {
         rDiv.removeChild(rDiv.firstChild);
     }
+    var resultdiv=document.getElementById("result");
+    resultdiv.removeChild(resultdiv.childNodes[2]);
 }
 function startQuizinit(){
     document.getElementById("startBtnInit").style.display="none";
 
     document.getElementById("instructions").style.display = "none";
-    document.getElementById("TaskTitle").innerHTML = "Quiz for DES/ TripleDES";
+    document.getElementById("TaskTitle").innerHTML = "Quiz for Cryptography";
     document.getElementById("result").style.visibility = "hidden";
     document.getElementById("displayResult").style.display = "none";
     removeChilds();

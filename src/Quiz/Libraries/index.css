@@ -61,7 +61,7 @@
     background-color: #176696;
     font-family: 'Times New Roman', Times, serif;
     border-radius: 5px;
-    box-shadow: 2px 10px 5px 3px #888888;
+    box-shadow: 3px 5px 15px 3px #888888;
 }
 .footer{
     padding: 3em;
@@ -74,7 +74,7 @@
     font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
     border-radius: 5px;
-    box-shadow: 2px 10px 5px 3px #888888;
+    box-shadow: 3px 5px 15px 3px #888888;
 }
 #result{
     padding:10px;
@@ -94,7 +94,7 @@
     font-weight: bold;
     font-size:1em;
     border-radius: 5px;
-    box-shadow: 2px 10px 5px 3px #888888;
+    box-shadow: 3px 5px 15px 3px #888888;
 }
 div.question:hover { 
     box-shadow: none;
@@ -125,4 +125,12 @@ div.question:hover {
 
 .hide{
     display: none;
+}
+.resultStatus{
+    position: relative;
+    margin-top: -5%;
+    float: right; 
+}
+.paddingClass{
+    padding-right: 10px;
 }
