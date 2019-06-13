@@ -2,7 +2,8 @@ var UserAnswers = [];
 var RandomNumbers = [];
 var ArrayEmpty = 1;
 var CorrectCount = 0;
-var TotalContainer = 0;
+var TotalContainer = 5;
+var title="Quiz for Cryptography";
 
 var jsonData = [];
 
@@ -20,7 +21,7 @@ function load() {
 function initialize_array() {
     $.ajax(
         {
-            url: "Libraries/data.json",
+            url: "data.json",
             dataType: 'json',
             type: 'get',
             cache: false,
@@ -152,10 +153,6 @@ function generateResultContainer(RID, SId, CId, status) {
 }
 function putContainers() {
     console.log("In put containers");
-    var totalarray = 5;
-    totalarray = parseInt(totalarray);
-
-    TotalContainer = totalarray;
     var QId = "Q";
     var AId = "A";
     var RId = "R";
@@ -306,7 +303,7 @@ function startQuizinit() {
     document.getElementById("startBtnInit").style.display = "none";
 
     document.getElementById("instructions").style.display = "none";
-    document.getElementById("TaskTitle").innerHTML = "Quiz for Cryptography";
+    document.getElementById("TaskTitle").innerHTML = title;
     document.getElementById("result").style.visibility = "hidden";
     document.getElementById("displayResult").style.display = "none";
     removeChilds();
@@ -318,7 +315,7 @@ function startQuizinit() {
 function startQuiz() {
 
     document.getElementById("instructions").style.display = "none";
-    document.getElementById("TaskTitle").innerHTML = "Quiz for Cryptography";
+    document.getElementById("TaskTitle").innerHTML = title;
     document.getElementById("result").style.visibility = "hidden";
     document.getElementById("displayResult").style.display = "none";
     removeChilds();
