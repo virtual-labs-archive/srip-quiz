@@ -9,6 +9,14 @@
             "description": "SHA 1 – Secure Hash Algorithm 1, or SHA 1 is a cryptographic hash function. It produces a 160 bit (20 byte) hash value (message digest).MD5 – Message Digest 5, or MD5 is a widely used cryptographic hash function that produces a 128 bit hash value (message digest). SHA 1 and MD5 are used to generate a message digest by the network security protocols "
         },
         {
+            "q": "Which of these is correct ?",
+            "opt1": "MD5 is vulnerable to the Birthday attack.",
+            "opt2": "3DES is a type of Public Key Encrytion Algorithm.",
+            "opt3": "Both",
+            "answer": "MD5 is vulnerable to the Birthday attack.",
+            "description": " 3DES is a type of private key encryption algorithm and MD5 is a cryptographic Hash function and is vulnerable to birthday attack. "
+        },
+        {
             "q": "Suppose that everyone in a group of N people wants to communicate secretly with the N–1 others using symmetric key cryptographic system. The communication between any two persons should not be decodable by the others in the group. The number of keys required in the system as a whole to satisfy the confidentiality requirement is ?",
             "opt1": "2N",
             "opt2": "N(N-1)",
@@ -111,6 +119,87 @@
             "opt3": "Data Encryption Standard",
             "answer": "Data Encryption Standard",
             "description": "Feistel Cipher is not a specific scheme of block cipher, it is a design model from which many different block ciphers are derived. DES is just one example of a Feistel Cipher. A cryptographic system based on Feistel cipher structure uses the same algorithm for both encryption and decryption."
+        },
+        {
+            "q": "Using public key cryptography, X adds a digital signature σ to a message M, encrypts (M,σ) and sends it to Y, where it is decrypted. Which one of the following sequence of keys is used for operations ?",
+            "opt1": "Encryption : X’s private key followed by Y’s private key. Decryption : X’s public key followed by Y’s public key.",
+            "opt2": "Encryption : X’s private key followed by Y’s public key; Decryption : X’s public key followed by Y’s private key",
+            "opt3": "Encryption : X’s private key followed by Y’s public key; Decryption : Y’s private key followed by X’s public key.",
+            "answer": "Encryption : X’s private key followed by Y’s public key; Decryption : Y’s private key followed by X’s public key.",
+            "description": "Refer GATE CS 2013 Questions"
+        },
+        {
+            "q": "MD5 is a widely used hash function for producing hash value of ?",
+            "opt1": "64 bits",
+            "opt2": "128 bits",
+            "opt3": "512 bits",
+            "answer": "128 bits",
+            "description": "MD5 hash function accepts sequence of bytes and returns 128 bit hash value, usually used to check data integrity but has security issue ."
+        },
+        {
+            "q": "If there are N people in the world and are using secret key encryption/decryption for privacy purpose, then number of secret keys required will be ?",
+            "opt1": "N",
+            "opt2": "N (N - 1) / 2",
+            "opt3": "N (N + 1) / 2",
+            "answer": "N (N - 1) / 2",
+            "description": "Refer Question from UGC NET CS 2016 July ."
+        },
+        {
+            "q": "Using p = 3, q = 13, d = 7 and e = 3 in the RSA algorithm, what is the value of ciphertext for a plain text 5 ?",
+            "opt1": "8",
+            "opt2": "16",
+            "opt3": "26",
+            "answer": "8",
+            "description": "C = Me mod n     ->n = p * q     ->= 3 * 13     ->= 39    ->C = 53 mod 39    ->= 8"
+        }
+        ,
+        {
+            "q": "Hashed message is signed by a sender using ?",
+            "opt1": "his public key",
+            "opt2": "his private key",
+            "opt3": "receiver’s private key",
+            "answer": "his private key",
+            "description": " After the generation of hashed message that needs to be transmitted over a network, it is signed or encrypted using the private key of the sender which also generates the digital signatures. The message is transmitted along with the digital signatures which ensures Authentication and Non-repudiation."
+        },
+        {
+            "q": "How many distinct stages are there in DES algorithm, which is parameterized by a 56-bit key ?",
+            "opt1": "17",
+            "opt2": "18",
+            "opt3": "19",
+            "answer": "19",
+            "description": "Refer UGC NET CS 2014 Dec"
+        },
+        {
+            "q": "Which one of the following is true for asymmetric-key cryptography ?",
+            "opt1": "Private key is kept by the receiver and public key is announced to the public",
+            "opt2": "Public key is kept by the receiver and private key is announced to the public.",
+            "opt3": " Both private key and public key are announced to the public.",
+            "answer": " Both private key and public key are announced to the public.",
+            "description": "Refer UGC NET CS 2014 Dec"
+        },
+        {
+            "q": "A Trojan horse is ?",
+            "opt1": "A piece of code that can attach itself to other programs in the system and spread to other systems when programs are copied or transferred.",
+            "opt2": "A program that spreads to other computer systems by exploiting security holes like weaknesses in facilities for creation of remote processes",
+            "opt3": " A program that performs a legitimate function that is known to an operating system or its user and also has a hidden component that can be used for nefarious purposes like attacks on message security or impersonation.",
+            "answer": "A program that performs a legitimate function that is known to an operating system or its user and also has a hidden component that can be used for nefarious purposes like attacks on message security or impersonation.",
+            "description": "Refer UGC NET CS 2014 Dec"
+        },
+        {
+            "q": "In cryptography, the following uses transposition ciphers and the keyword is LAYER. Encrypt the following message. (Spaces are omitted during encryption) ->>>  WELCOME TO NETWORK SECURITY ! ?",
+            "opt1": "WMEKREETSILTWETCOOCYONRU!",
+            "opt2": "EETSICOOCYWMEKRONRU!LTWET",
+            "opt3": " LTWETONRU!WMEKRCOOCYEETSI",
+            "answer": "EETSICOOCYWMEKRONRU!LTWET",
+            "description": "Refer ISRO CS 2018"
+        },
+        {
+            "q": "Avalanche effect in cryptography ?",
+            "opt1": "Is desirable property of cryptographic algorithm",
+            "opt2": "Is undesirable property of cryptographic algorithm",
+            "opt3": " None of the above",
+            "answer": "Is desirable property of cryptographic algorithm",
+            "description": "Refer ISRO CS 2018"
         }
     ]
 }

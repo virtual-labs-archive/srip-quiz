@@ -21,7 +21,7 @@ function load() {
 function initialize_array() {
     $.ajax(
         {
-            url: "data.json",
+            url: "quiz-data.json",
             dataType: 'json',
             type: 'get',
             cache: false,
