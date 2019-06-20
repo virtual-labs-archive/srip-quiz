@@ -34,6 +34,7 @@ function initialize_array() {
 
         }
     );
+    
 }
 
 var color_status = 0;
@@ -300,17 +301,23 @@ function removeChilds() {
     resultdiv.removeChild(resultdiv.childNodes[2]);
 }
 function startQuizinit() {
-    document.getElementById("startBtnInit").style.display = "none";
+    if(TotalContainer>0 && jsonData.length>0){
+        document.getElementById("startBtnInit").style.display = "none";
 
-    document.getElementById("instructions").style.display = "none";
-    document.getElementById("TaskTitle").innerHTML = title;
-    document.getElementById("result").style.visibility = "hidden";
-    document.getElementById("displayResult").style.display = "none";
-    removeChilds();
-    putContainers();
-    document.getElementById("submitBtn").style.display = "block";
-    putQuestion();
-    document.getElementById("quizBody").style.display = "block";
+        document.getElementById("instructions").style.display = "none";
+        document.getElementById("TaskTitle").innerHTML = title;
+        document.getElementById("result").style.visibility = "hidden";
+        document.getElementById("displayResult").style.display = "none";
+        removeChilds();
+        putContainers();
+        document.getElementById("submitBtn").style.display = "block";
+        putQuestion();
+        document.getElementById("quizBody").style.display = "block";
+        console.log("Total questions->"+jsonData.length);
+    }
+    else{
+        alert("Either minimum questions set to zero or no questions in json file");
+    }
 }
 function startQuiz() {
 
