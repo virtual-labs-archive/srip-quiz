@@ -2,16 +2,17 @@ var UserAnswers = [];
 var RandomNumbers = [];
 var ArrayEmpty = 1;
 var CorrectCount = 0;
-var TotalContainer = 25;
-var title = "Quiz for Cryptography";
+
+/***************************************Variables that can be changed from here****************************************************** */
+var TotalContainer = -1;
+var title = "";
+/***************************************Variables that can be changed upto here****************************************************** */
 
 var jsonData = [];
 
-function Constructer(question, o1, o2, o3, an, des) {
+function Constructer(question, an, des) {
     this.q = question;
-    this.opt1 = o1;
-    this.opt2 = o2;
-    this.opt3 = o3;
+    this.option = [];
     this.answer = an;
     this.description = des;
 }
@@ -27,9 +28,25 @@ function initialize_array() {
             cache: false,
             success: function (data) {
                 $(data.artciles).each(function (a, b) {
-                    var obj = new Constructer(b.q, b.opt1, b.opt2, b.opt3, b.answer, b.description);
-                    jsonData.push(obj);
+                    if (a != 0) {
+                        var obj = new Constructer(b.q, b.answer, b.description);
+                        for (var i = 0; i < b.option.length; i++) {
+                            obj.option.push(b.option[i]);
+                        }
+                        console.log(b);
+                        jsonData.push(obj);
+                    }
+                    else {
+                        title = b.quiztitle;
+                        TotalContainer = parseInt(b.containers);
+                    }
                 });
+            },
+            error: function (jqXHR, status, err) {
+                console.log("Local error callback.");
+            },
+            complete: function (jqXHR, status) {
+                console.log("Local completion callback.");
             }
 
         }
@@ -37,8 +54,8 @@ function initialize_array() {
 
 }
 
-var color_status = 0;
-function generateQuestionContainer(QID, AID, OID, status) {
+
+function generateQuestionContainer(QID, AID, OID, status, k) {
     var containerDiv = document.getElementById("quizBody");
     var parentDiv = document.createElement("div");
     var QuestionDiv = document.createElement("div");
@@ -49,8 +66,8 @@ function generateQuestionContainer(QID, AID, OID, status) {
     parentDiv.className = "question";
     parentDiv.appendChild(QuestionDiv);
     parentDiv.appendChild(hr);
-
-    for (var i = 0; i < 3; i++) {
+    console.log("QID" + " " + QID + " Options->>" + k);
+    for (var i = 0; i < jsonData[k].option.length; i++) {
         var OptionDiv = document.createElement("LABEL");
         OptionDiv.classList.add("answer");
         OptionDiv.classList.add("labelContainer");
@@ -83,7 +100,7 @@ function generateQuestionContainer(QID, AID, OID, status) {
     }
 
 }
-function generateResultContainer(RID, SId, CId, ROID,DesID,SyId, status) {
+function generateResultContainer(RID, SId, CId, ROID, DesID, SyId, status, k) {
     var containerDiv = document.getElementById("displayResult");
     var tempDiv = document.createElement("div");
     var parentDiv = document.createElement("div");
@@ -100,11 +117,11 @@ function generateResultContainer(RID, SId, CId, ROID,DesID,SyId, status) {
     tempDiv.appendChild(hr);
     parentDiv.appendChild(tempDiv);
 
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < jsonData[k].option.length + 1; i++) {
         var AnswerDiv = document.createElement("LABEL");
         AnswerDiv.classList.add("answer");
         AnswerDiv.classList.add("labelContainer");
-        if (i !== 3) {
+        if (i !== jsonData[k].option.length) {
             var input = document.createElement("INPUT");
             input.setAttribute("type", "radio");
             input.disabled = true;
@@ -126,7 +143,7 @@ function generateResultContainer(RID, SId, CId, ROID,DesID,SyId, status) {
             AnswerDiv.appendChild(spanS);
         }
 
-        if (i == 3) {
+        if (i == jsonData[k].option.length) {
             AnswerDiv = document.createElement("div");
             AnswerDiv.className = "descript";
 
@@ -138,7 +155,7 @@ function generateResultContainer(RID, SId, CId, ROID,DesID,SyId, status) {
             AnswerDiv.appendChild(hr);
 
             var spanR = document.createElement("div");
-            spanR.id =DesID;     //D1
+            spanR.id = DesID;     //D1
             AnswerDiv.appendChild(spanR);
 
         }
@@ -152,89 +169,65 @@ function generateResultContainer(RID, SId, CId, ROID,DesID,SyId, status) {
         containerDiv.insertBefore(br, parentDiv);
     }
 }
-function putContainers() {
+function putContainers(k, i) {
     console.log("In put containers");
-    var QId = "Q";
-    var AId = "A";
-    var RId = "R";
-    var SId = "S";
-    var CId = "C";
-    var OId = "O";
-    var ROID = "RO";
-    var DesID="D";
-    var SyId="SY";
-    for (var i = 0; i < TotalContainer; i++) {
-        var Qstring = QId.concat((i + 1).toString());
-        var Astring = AId.concat((i + 1).toString());
-        var Rstring = RId.concat((i + 1).toString());
-        var Sstring = SId.concat((i + 1).toString());
-        var Cstring = CId.concat((i + 1).toString());
-        var Ostring = OId.concat((i + 1).toString());
-        var ROstring = ROID.concat((i + 1).toString());
-        var DesIDstring = DesID.concat((i + 1).toString());
-        var SyIdString = SyId.concat((i + 1).toString());
-        generateQuestionContainer(Qstring, Astring, Ostring, i);
-        generateResultContainer(Rstring, Sstring, Cstring, ROstring, DesIDstring,SyIdString,i);
-    }
-}
+    var QId = "Q".concat((i + 1).toString());
+    var AId = "A".concat((i + 1).toString());
+    var RId = "R".concat((i + 1).toString());
+    var SId = "S".concat((i + 1).toString());
+    var CId = "C".concat((i + 1).toString());
+    var OId = "O".concat((i + 1).toString());
+    var ROID = "RO".concat((i + 1).toString());
+    var DesID = "D".concat((i + 1).toString());
+    var SyId = "SY".concat((i + 1).toString());
+    generateQuestionContainer(QId, AId, OId, i, k);
+    generateResultContainer(RId, SId, CId, ROID, DesID, SyId, i, k);
 
+}
+/*******************************************************************************************************/
 function putResult() {
     var ROID = "RO";
     var RID = "R";
     var QID = "O";
     var SID = "S";
     var CID = "C";
-    var DesId="D";
-    var SyId="SY";
+    var DesId = "D";
+    var SyId = "SY";
+
     for (var i = 0; i < TotalContainer; i++) {
         var SymbID = SyId.concat((i + 1).toString());    //SY1
         var SymbolID = SID.concat((i + 1).toString());    //S1
         var TempQID = QID.concat((i + 1).toString());    //O1
         var TempRID = RID.concat((i + 1).toString());   //R1
         var TempROID = ROID.concat((i + 1).toString());   //RO1
-        var AnsID1 = TempROID.concat("1");   //RO11
-        var AnsID2 = TempROID.concat("2");    //RO12
-        var AnsID3 = TempROID.concat("3");    //RO13
         var descriptionID = DesId.concat((i + 1).toString());    //D1
         var TempCID = CID.concat((i + 1).toString());   //C1
 
 
-        document.getElementById(TempRID).innerHTML = jsonData[RandomNumbers[i]].q;
-        document.getElementById(AnsID1).innerHTML = jsonData[RandomNumbers[i]].opt1;
-        document.getElementById(AnsID2).innerHTML = jsonData[RandomNumbers[i]].opt2;
-        document.getElementById(AnsID3).innerHTML = jsonData[RandomNumbers[i]].opt3;
+        //here putting questions,options and thier description in place
+        for (var t = 0; t < jsonData[RandomNumbers[i]].option.length; t++) {
+            var AnsID1 = TempROID.concat((t + 1).toString());   //RO11
+            document.getElementById(AnsID1).innerHTML = document.getElementById(TempQID.concat((t + 1).toString())).innerHTML;
+        }
+        document.getElementById(TempRID).innerHTML = "Q".concat((i + 1).toString()) + ") " + jsonData[RandomNumbers[i]].q;
         document.getElementById(descriptionID).innerHTML = jsonData[RandomNumbers[i]].description;
         document.getElementById(descriptionID).style.textDecoration = "none";
         document.getElementById(descriptionID).style.color = "grey";
 
-        if (jsonData[RandomNumbers[i]].opt1 == jsonData[RandomNumbers[i]].answer) {
-            document.getElementById(SymbID.concat("1")).classList.add("fa");
-            document.getElementById(SymbID.concat("1")).classList.add("fa-check");
-            document.getElementById(SymbID.concat("1")).style.color = "green";
-        }
-        else if (jsonData[RandomNumbers[i]].opt2 == jsonData[RandomNumbers[i]].answer) {
-            document.getElementById(SymbID.concat("2")).classList.add("fa");
-            document.getElementById(SymbID.concat("2")).classList.add("fa-check");
-            document.getElementById(SymbID.concat("2")).style.color = "green";
-        }
-        else if (jsonData[RandomNumbers[i]].opt3 == jsonData[RandomNumbers[i]].answer) {
-            document.getElementById(SymbID.concat("3")).classList.add("fa");
-            document.getElementById(SymbID.concat("3")).classList.add("fa-check");
-            document.getElementById(SymbID.concat("3")).style.color = "green";
-        }
-
         var t2 = jsonData[RandomNumbers[i]].answer;
         var t1;
 
-        if (UserAnswers[i] === 1) {
-            t1 = document.getElementById(TempQID.concat("1")).innerHTML;
+
+        //here finding the useranswer
+        for (var t = 0; t < jsonData[RandomNumbers[i]].option.length; t++) {
+            if (UserAnswers[i] === t + 1) {
+                t1 = document.getElementById(TempQID.concat((t + 1).toString())).innerHTML;
+                console.log("User ans is ->>" + t1);
+                console.log("Actual ans is->" + t2);
+            }
         }
-        else if (UserAnswers[i] === 2) {
-            t1 = document.getElementById(TempQID.concat("2")).innerHTML;
-        }
-        else if (UserAnswers[i] === 3) {
-            t1 = document.getElementById(TempQID.concat("3")).innerHTML;
-        }
+
+        //here the status to question is assigned
         if (t1 !== t2) {
 
             document.getElementById(SymbolID).innerHTML = "Incorrect";
@@ -248,57 +241,33 @@ function putResult() {
         }
 
 
-        if (t1 == jsonData[RandomNumbers[i]].opt1) {
+        //here the status to options is assigned
+        for (var t = 0; t < jsonData[RandomNumbers[i]].option.length; t++) {
 
-            var checkedInputID = TempCID.concat("1"); //C11
-            document.getElementById(checkedInputID).checked = true;
-
-            if (t1 == jsonData[RandomNumbers[i]].answer) {
-                document.getElementById(SymbID.concat("1")).classList.add("fa");
-                document.getElementById(SymbID.concat("1")).classList.add("fa-check");
-                document.getElementById(SymbID.concat("1")).style.color = "green";
+            if (t1 == document.getElementById(TempQID.concat((t + 1).toString())).innerHTML) {
+                var checkedInputID = TempCID.concat((t + 1).toString()); //C11
+                document.getElementById(checkedInputID).checked = true;
+                document.getElementById(SymbID.concat((t + 1).toString())).classList.add("fa");
+                if (t1 == jsonData[RandomNumbers[i]].answer) {
+                    document.getElementById(SymbID.concat((t + 1).toString())).classList.add("fa-check");
+                    document.getElementById(SymbID.concat((t + 1).toString())).style.color = "green";
+                }
+                else {
+                    document.getElementById(SymbID.concat((t + 1).toString())).classList.add("fa-close");
+                    document.getElementById(SymbID.concat((t + 1).toString())).style.color = "red";
+                }
             }
-            else {
-                document.getElementById(SymbID.concat("1")).classList.add("fa");
-                document.getElementById(SymbID.concat("1")).classList.add("fa-close");
-                document.getElementById(SymbID.concat("1")).style.color = "red";
-            }
-
-        } else if (t1 == jsonData[RandomNumbers[i]].opt2) {
-
-            var checkedInputID = TempCID.concat("2"); //C11
-            document.getElementById(checkedInputID).checked = true;
-
-            if (t1 == jsonData[RandomNumbers[i]].answer) {
-                document.getElementById(SymbID.concat("2")).classList.add("fa");
-                document.getElementById(SymbID.concat("2")).classList.add("fa-check");
-                document.getElementById(SymbID.concat("2")).style.color = "green";
-            }
-            else {
-                document.getElementById(SymbID.concat("2")).classList.add("fa");
-                document.getElementById(SymbID.concat("2")).classList.add("fa-close");
-                document.getElementById(SymbID.concat("2")).style.color = "red";
+            else if (t2 == document.getElementById(TempQID.concat((t + 1).toString())).innerHTML) {
+                document.getElementById(SymbID.concat((t + 1).toString())).classList.add("fa");
+                document.getElementById(SymbID.concat((t + 1).toString())).classList.add("fa-check");
+                document.getElementById(SymbID.concat((t + 1).toString())).style.color = "green";
             }
 
-        } else if (t1 == jsonData[RandomNumbers[i]].opt3) {
-
-            var checkedInputID = TempCID.concat("3"); //C11
-            document.getElementById(checkedInputID).checked = true;
-
-            if (t1 == jsonData[RandomNumbers[i]].answer) {
-                document.getElementById(SymbID.concat("3")).classList.add("fa");
-                document.getElementById(SymbID.concat("3")).classList.add("fa-check");
-                document.getElementById(SymbID.concat("3")).style.color = "green";
-            }
-            else {
-                document.getElementById(SymbID.concat("3")).classList.add("fa");
-                document.getElementById(SymbID.concat("3")).classList.add("fa-close");
-                document.getElementById(SymbID.concat("3")).style.color = "red";
-            }
         }
     }
 
 }
+
 function removeChilds() {
     console.log("Remove child");
     var qDiv = document.getElementById("quizBody");
@@ -322,7 +291,6 @@ function startQuizinit() {
         document.getElementById("result").style.visibility = "hidden";
         document.getElementById("displayResult").style.display = "none";
         removeChilds();
-        putContainers();
         document.getElementById("submitBtn").style.display = "block";
         putQuestion();
         document.getElementById("quizBody").style.display = "block";
@@ -340,7 +308,6 @@ function startQuiz() {
     document.getElementById("result").style.visibility = "hidden";
     document.getElementById("displayResult").style.display = "none";
     removeChilds();
-    putContainers();
     document.getElementById("startBtn").style.visibility = "hidden";
     document.getElementById("submitBtn").style.display = "block";
     putQuestion();
@@ -351,21 +318,14 @@ function isSubmittable() {
     var AID = "A";
     var status = 0;
     for (var i = 0; i < TotalContainer; i++) {
+        status = 0;
         var TempAID = AID.concat((i + 1).toString());
-        var TempAID1 = TempAID.concat("1");
-        var TempAID2 = TempAID.concat("2");
-        var TempAID3 = TempAID.concat("3");
-        if (document.getElementById(TempAID1).checked) {
-            status = 1;
-        }
-        else if (document.getElementById(TempAID2).checked) {
-            status = 1;
-        }
-        else if (document.getElementById(TempAID3).checked) {
-            status = 1;
-        }
-        else {
-            status = 0;
+        for (var t = 0; t < jsonData[RandomNumbers[i]].option.length; t++) {
+            var TempAID1 = TempAID.concat((t + 1).toString());
+
+            if (document.getElementById(TempAID1).checked) {
+                status = 1;
+            }
         }
     }
     return status;
@@ -394,36 +354,39 @@ function submitQuiz() {
 }
 
 function generateRandomIndex() {
-    var x = Math.floor((Math.random() * TotalContainer) + 0);
+    var x = Math.floor((Math.random() * jsonData.length) + 0);
     var temp = RandomNumbers.indexOf(x);
     while (temp != -1 && ArrayEmpty === 0) {
-        x = Math.floor((Math.random() * TotalContainer) + 0);
+        x = Math.floor((Math.random() * jsonData.length) + 0);
         temp = RandomNumbers.indexOf(x);
     }
     RandomNumbers.push(x);
+    console.log("Question index->>"+x);
     ArrayEmpty = 0;
     return x;
 }
 
-function getContent(TempQID, OptionOID) {
+function getContent(TempQID, OptionOID, k) {
     var RandomIndex = generateRandomIndex();
+
+    putContainers(RandomIndex, k);
     console.log("Get content->>>>Qid->" + TempQID + "  " + RandomIndex);
     var tempStack = [];
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < jsonData[RandomIndex].option.length; i++) {
 
-        var x = Math.floor((Math.random() * 3) + 1);
+        var x = Math.floor((Math.random() * jsonData[RandomIndex].option.length) + 1);
         var temp = tempStack.indexOf(x);
         while (temp != -1) {
-            x = Math.floor((Math.random() * 3) + 1);
+            x = Math.floor((Math.random() * jsonData[RandomIndex].option.length) + 1);
             temp = tempStack.indexOf(x);
         }
         tempStack.push(x);
     }
-
-    document.getElementById(TempQID).innerHTML = jsonData[RandomIndex].q;
-    document.getElementById(OptionOID.concat((tempStack[0]).toString())).innerHTML = jsonData[RandomIndex].opt1;
-    document.getElementById(OptionOID.concat((tempStack[1]).toString())).innerHTML = jsonData[RandomIndex].opt2;
-    document.getElementById(OptionOID.concat((tempStack[2]).toString())).innerHTML = jsonData[RandomIndex].opt3;
+    var temp = "Q".concat((k + 1).toString());
+    document.getElementById(TempQID).innerHTML = temp + ") " + jsonData[RandomIndex].q;
+    for (var i = 0; i < tempStack.length; i++) {
+        document.getElementById(OptionOID.concat((tempStack[i]).toString())).innerHTML = jsonData[RandomIndex].option[i];
+    }
     console.log("Question putted is->" + jsonData[RandomIndex].q);
     console.log("Question putted in->" + document.getElementById(TempQID).innerHTML);
 }
@@ -434,32 +397,21 @@ function putQuestion() {
     for (var i = 0; i < TotalContainer; i++) {
         var OptionOID = OID.concat((i + 1).toString());
         var TempQID = QID.concat((i + 1).toString());
-        getContent(TempQID, OptionOID);
+        getContent(TempQID, OptionOID, i);
     }
 }
 
-function checkAnswer(AnsId, JsonId, OId) {
+function checkAnswer(AnsId, JsonId, OId, k) {
     var userAns = -1;
-    if (document.getElementById(AnsId.concat("1")).checked) {
-        userAns = 1;
-        if (document.getElementById(OId.concat("1")).innerHTML == jsonData[JsonId].answer) {
-            CorrectCount = CorrectCount + 1;
+
+    for (var i = 0; i < jsonData[RandomNumbers[k]].option.length; i++) {
+        if (document.getElementById(AnsId.concat((i + 1).toString())).checked) {
+            userAns = i + 1;
+            if (document.getElementById(OId.concat((i + 1).toString())).innerHTML == jsonData[JsonId].answer) {
+                CorrectCount = CorrectCount + 1;
+            }
+            console.log(CorrectCount + " " + document.getElementById(OId.concat((i + 1).toString())).innerHTML + "  ->>" + jsonData[JsonId].answer);
         }
-        console.log(CorrectCount + " " + document.getElementById(OId.concat("1")).innerHTML + "  ->>" + jsonData[JsonId].answer);
-    }
-    else if (document.getElementById(AnsId.concat("2")).checked) {
-        userAns = 2;
-        if (document.getElementById(OId.concat("2")).innerHTML == jsonData[JsonId].answer) {
-            CorrectCount = CorrectCount + 1;
-        }
-        console.log(CorrectCount + " " + document.getElementById(OId.concat("2")).innerHTML + "  ->>" + jsonData[JsonId].answer);
-    }
-    else if (document.getElementById(AnsId.concat("3")).checked) {
-        userAns = 3;
-        if (document.getElementById(OId.concat("3")).innerHTML == jsonData[JsonId].answer) {
-            CorrectCount = CorrectCount + 1;
-        }
-        console.log(CorrectCount + " " + document.getElementById(OId.concat("3")).innerHTML + "  ->>" + jsonData[JsonId].answer);
     }
     return userAns;
 }
@@ -471,7 +423,7 @@ function submitAnswers() {
         var TempAID = AID.concat((i + 1).toString());   //A1
         var JsonId = RandomNumbers[i];    //contains the questions index
         var TempOID = OID.concat((i + 1).toString());       //O1
-        var userAns = checkAnswer(TempAID, JsonId, TempOID);
+        var userAns = checkAnswer(TempAID, JsonId, TempOID, i);
         UserAnswers.push(userAns);
     }
 }

@@ -1,203 +1,256 @@
 {
     "artciles": [
         {
+            "quiztitle":"Quiz for Cryptography",
+            "containers":"5"
+        },
+        {
             "q": "Which of the following are used to generate a message digest by the network security protocols?",
-            "opt1": "RSA and DES",
-            "opt2": "SHA-1 and  DES",
-            "opt3": "SHA-1 and MD5",
+            "option": [
+                "RSA and DES",
+                "SHA-1 and  DES",
+                "SHA-1 and MD5"
+            ],
             "answer": "SHA-1 and MD5",
             "description": "SHA 1 – Secure Hash Algorithm 1, or SHA 1 is a cryptographic hash function. It produces a 160 bit (20 byte) hash value (message digest).MD5 – Message Digest 5, or MD5 is a widely used cryptographic hash function that produces a 128 bit hash value (message digest). SHA 1 and MD5 are used to generate a message digest by the network security protocols "
         },
         {
             "q": "Which of these is correct ?",
-            "opt1": "MD5 is vulnerable to the Birthday attack.",
-            "opt2": "3DES is a type of Public Key Encrytion Algorithm.",
-            "opt3": "Both",
+            "option": [
+                "MD5 is vulnerable to the Birthday attack.",
+                "3DES is a type of Public Key Encrytion Algorithm.",
+                "Both"
+            ],
             "answer": "MD5 is vulnerable to the Birthday attack.",
             "description": " 3DES is a type of private key encryption algorithm and MD5 is a cryptographic Hash function and is vulnerable to birthday attack. "
         },
         {
             "q": "Suppose that everyone in a group of N people wants to communicate secretly with the N–1 others using symmetric key cryptographic system. The communication between any two persons should not be decodable by the others in the group. The number of keys required in the system as a whole to satisfy the confidentiality requirement is ?",
-            "opt1": "2N",
-            "opt2": "N(N-1)",
-            "opt3": "N(N-1)/2",
+            "option": [
+                "2N",
+                "N(N-1)",
+                "N(N-1)/2"
+            ],
             "answer": "N(N-1)/2",
             "description": "In Symmetric Key Cryptography, access of key is with both the parties. It implies every person needs to communicate N-1 other users using different keys i.e 1+2+3...N-2+N-1 This is like number of edges needed in a complete graph with N vertices is N(N-1)/2. "
         },
         {
             "q": " Anarkali digitally signs a message and sends it to Salim. Verification of the signature by Salim requires ?",
-            "opt1": "Anarkali public Key",
-            "opt2": "Salim’s public key",
-            "opt3": "Anarkali’s private key",
+            "option": [
+                "Anarkali public Key",
+                "Salim’s public key",
+                "Anarkali’s private key"
+            ],
             "answer": "Anarkali public Key",
             "description": "Sender uses its private key to digitally sign a document. Receiver uses public key of sender to verify."
         },
         {
             "q": "Consider the following two statements: i. A hash function (these are often used for computing digital signatures) is an injective function. A. encryption technique such as DES performs a permutation on the elements of its input alphabet. Which one of the following options is valid for the above two statements? ?",
-            "opt1": "Both are false",
-            "opt2": "Statement (i) is true and the other is false",
-            "opt3": "Statement (ii) is true and the other is false",
+            "option": [
+                "Both are false",
+                "Statement (i) is true and the other is false",
+                "Statement (ii) is true and the other is false"
+            ],
             "answer": "Statement (ii) is true and the other is false",
             "description": "Injective Function: A function F(X) is said to be injective if it has one-to-one mapping. Statement 1: Hash function is an injective function Statement 2: DES Encryption technique performs a permutation on the elements of its input alphabet  1) Generally, a hash function H(X) is mapping from a larger set to a predefined output set For example, let H(X) = (X)%5 The above function H(X) is not injective because Let X1 = 10, X2 = 15 H(10) = H(15) = 0 As the output of H(X1) = H(X2) where X1!= X2 => H(X) is many-to-one function. Statement 1 is false.2) In DES encryption scheme, it performs P-Box permutation. Statement 1 is false, Statement 2 is true."
         },
         {
             "q": "The minimum positive integer p such that 3p modulo 17 = 1 is ?",
-            "opt1": "5",
-            "opt2": "12",
-            "opt3": "16",
+            "option": [
+                "5",
+                "12",
+                "16"
+            ],
             "answer": "16",
             "description": "Either use Fermat's Little Theorem or put the value of p and get the answer"
         },
         {
             "q": "Exponentiation is a heavily used operation in public key cryptography. Which of the following options is the tightest upper bound on the number of multiplications required to compute bn mod m,0≤b,n≤m ?",
-            "opt1": "O(logn)",
-            "opt2": "O(√n)",
-            "opt3": "O(n/logn)",
+            "option": [
+                "O(logn)",
+                "O(√n)",
+                "O(n/logn)"
+            ],
             "answer": "O(logn)",
             "description": "This Problem can be solved using Divide And Conquer Paradigm .Recurrence Relation for computing the time complexity of the divide and conquer algorithm is T(n) = T(n/2) + constant = (log2n) "
         },
         {
             "q": "The total number of keys required for a set of n individuals to be able to communicate with each other using secret key and public key crypto-systems, respectively are ?",
-            "opt1": "n(n-1) and 2n",
-            "opt2": "2n and ((n(n - 1))/2)",
-            "opt3": "((n(n - 1))/2) and 2n",
+            "option": [
+                "n(n-1) and 2n",
+                "2n and ((n(n - 1))/2)",
+                "((n(n - 1))/2) and 2n"
+            ],
             "answer": "((n(n - 1))/2) and 2n",
             "description": "If there are 2 individuals then total number of distinct keys for communication will be 1 Similarly for 3 individuals we will need 2 distinct keys. Like ways for n users we will need n-1 keys So, total number of keys will be 1+2+3+…n-1 = (n (n-1)/2) Now for a public key encryption scheme every individual will have two keys one public key and one private key. Therefore, for n individuals to communicate we will have 2* n keys Hence, the correct answer will be ((n(n – 1))/2) and 2n."
         },
         {
             "q": "In a RSA cryptosystem, a participant A uses two prime numbers p=13 and q=11 to generate his public and private keys. If the public key of A is 37, then the private key of A is ?",
-            "opt1": "13",
-            "opt2": "35",
-            "opt3": "17",
+            "option": [
+                "13",
+                "35",
+                "17"
+            ],
             "answer": "13",
             "description": "Public Key = (n, e) Private Key = (n, d) n = pq = 143 z = (p-1)(q-1) = 120 Given e = 37 Using ed mod z = 1 Candidates for 1 mod z = 121 241 361 481 601 721 841 961 1081 1201 1321 1441 1561 1681 1801 1921 2041 2161 2281 2401 2521 2641 2761 2881 3001 3121 3241 3361 3481 3601 Smallest number which is a multiple of 37 is 481 and 481/37 = 13 So the private key is 13 ."
         },
         {
             "q": "Pretty Good Privacy (PGP) is used in ?",
-            "opt1": "Browser security",
-            "opt2": "FTP security",
-            "opt3": "Email security",
+            "option": [
+                "Browser security",
+                "FTP security",
+                "Email security"
+            ],
             "answer": "Email security",
             "description": "PGP is a an encryption phenomena that provide cryptographic privacy and authentication for data communication over e-mails. It generates a public key to encrypt a message at sender's end and private key to decrypt a message at receiver's end allowing us to send files and messages securely over internet. OpenPGP is an email encryption standard. It uses Digital Signatures to provide authentication and integrity checking basically to check if the message is actually sent by the person or entity claimed to be the sender."
         },
         {
             "q": "An attacker sits between the sender and receiver and captures the information and retransmits to the receiver after some time without altering the information. This attack is called as ?",
-            "opt1": "Denial of service attack",
-            "opt2": "Masquarade attack",
-            "opt3": "Simple attack",
+            "option": [
+                "Denial of service attack",
+                "Masquarade attack",
+                "Simple attack"
+            ],
             "answer": "Denial of service attack",
             "description": "An attacker sits between the sender and receiver and captures the information and re-transmits to the receiver after some time without altering the information. This attack is called as Denial of service attack."
         },
         {
             "q": "An example of poly-alphabetic substitution is ?",
-            "opt1": "P-box",
-            "opt2": "S-box",
-            "opt3": "Vigenere cipher",
+            "option": [
+                "P-box",
+                "S-box",
+                "Vigenere cipher"
+            ],
             "answer": "Vigenere cipher",
             "description": "Using more than one alphabet and switching between them systematically to encrypt data is called a polyalphabetic substitution cipher. The Vigenere cipher is a method of encrypting alphabetic text by using a series of interwoven Caesar ciphers based on the letters of a keyword. It is a form of polyalphabetic substitution."
         },
         {
             "q": "A message 'COMPUTERNETWORK' encrypted (ignore quotes) using columnar transposition cipher with a key 'LAYER'.The encrypted message is ?",
-            "opt1": "CTTOEWMROPNRUEK",
-            "opt2": "MROUEKCTTPNROEW",
-            "opt3": "OEWPNRCTTUEKMRO",
+            "option": [
+                "CTTOEWMROPNRUEK",
+                "MROUEKCTTPNROEW",
+                "OEWPNRCTTUEKMRO"
+            ],
             "answer": "OEWPNRCTTUEKMRO",
             "description": "According to columnar transposition cipher with key LAYER: 5 element in key so there will be 5 column in every row and write down the order in key alphabetically. L A Y E R 3 1 5 2 4 C O M P U T E R N E T W O R K Now encode it in column wise manner from column 1 to column 5 according to order defined by key. The Encrypted message will be OEWPNRCTTUEKMRO. For more information on columnar transposition cipher ."
         },
         {
             "q": "The standard for certificates used on internet is ?",
-            "opt1": "X.25",
-            "opt2": "X.301",
-            "opt3": "X.509",
+            "option": [
+                "X.25",
+                "X.301",
+                "X.509"
+            ],
             "answer": "X.509",
             "description": "In cryptography, X.509 is a standard that defines the format of public key certificates. X.509 certificates are used in many Internet protocols, including TLS/SSL, which is the basis for HTTPS, the secure protocol for browsing the web. ."
         },
         {
             "q": "Which of the following encryption algorithms is based on the Fiestal struture ?",
-            "opt1": "Advanced Encryption Standard",
-            "opt2": "RSA public key cryptographic algorithm",
-            "opt3": "Data Encryption Standard",
+            "option": [
+                "Advanced Encryption Standard",
+                "RSA public key cryptographic algorithm",
+                "Data Encryption Standard"
+            ],
             "answer": "Data Encryption Standard",
             "description": "Feistel Cipher is not a specific scheme of block cipher, it is a design model from which many different block ciphers are derived. DES is just one example of a Feistel Cipher. A cryptographic system based on Feistel cipher structure uses the same algorithm for both encryption and decryption."
         },
         {
             "q": "Using public key cryptography, X adds a digital signature σ to a message M, encrypts (M,σ) and sends it to Y, where it is decrypted. Which one of the following sequence of keys is used for operations ?",
-            "opt1": "Encryption : X’s private key followed by Y’s private key. Decryption : X’s public key followed by Y’s public key.",
-            "opt2": "Encryption : X’s private key followed by Y’s public key; Decryption : X’s public key followed by Y’s private key",
-            "opt3": "Encryption : X’s private key followed by Y’s public key; Decryption : Y’s private key followed by X’s public key.",
+            "option": [
+                "Encryption : X’s private key followed by Y’s private key. Decryption : X’s public key followed by Y’s public key.",
+                "Encryption : X’s private key followed by Y’s public key; Decryption : X’s public key followed by Y’s private key",
+                "Encryption : X’s private key followed by Y’s public key; Decryption : Y’s private key followed by X’s public key."
+            ],
             "answer": "Encryption : X’s private key followed by Y’s public key; Decryption : Y’s private key followed by X’s public key.",
             "description": "Refer GATE CS 2013 Questions"
         },
         {
             "q": "MD5 is a widely used hash function for producing hash value of ?",
-            "opt1": "64 bits",
-            "opt2": "128 bits",
-            "opt3": "512 bits",
+            "option": [
+                "64 bits",
+                "128 bits",
+                "512 bits"
+            ],
             "answer": "128 bits",
             "description": "MD5 hash function accepts sequence of bytes and returns 128 bit hash value, usually used to check data integrity but has security issue ."
         },
         {
             "q": "If there are N people in the world and are using secret key encryption/decryption for privacy purpose, then number of secret keys required will be ?",
-            "opt1": "N",
-            "opt2": "N (N - 1) / 2",
-            "opt3": "N (N + 1) / 2",
+            "option": [
+                "N",
+                "N (N - 1) / 2",
+                "N (N + 1) / 2"
+            ],
             "answer": "N (N - 1) / 2",
             "description": "Refer Question from UGC NET CS 2016 July ."
         },
         {
             "q": "Using p = 3, q = 13, d = 7 and e = 3 in the RSA algorithm, what is the value of ciphertext for a plain text 5 ?",
-            "opt1": "8",
-            "opt2": "16",
-            "opt3": "26",
+            "option": [
+                "8",
+                "16",
+                "26"
+            ],
             "answer": "8",
             "description": "C = Me mod n     ->n = p * q     ->= 3 * 13     ->= 39    ->C = 53 mod 39    ->= 8"
-        }
-        ,
+        },
         {
             "q": "Hashed message is signed by a sender using ?",
-            "opt1": "his public key",
-            "opt2": "his private key",
-            "opt3": "receiver’s private key",
+            "option": [
+                "his public key",
+                "his private key",
+                "receiver’s private key"
+            ],
             "answer": "his private key",
             "description": " After the generation of hashed message that needs to be transmitted over a network, it is signed or encrypted using the private key of the sender which also generates the digital signatures. The message is transmitted along with the digital signatures which ensures Authentication and Non-repudiation."
         },
         {
             "q": "How many distinct stages are there in DES algorithm, which is parameterized by a 56-bit key ?",
-            "opt1": "17",
-            "opt2": "18",
-            "opt3": "19",
+            "option": [
+                "17",
+                "18",
+                "19"
+            ],
             "answer": "19",
             "description": "Refer UGC NET CS 2014 Dec"
         },
         {
             "q": "Which one of the following is true for asymmetric-key cryptography ?",
-            "opt1": "Private key is kept by the receiver and public key is announced to the public",
-            "opt2": "Public key is kept by the receiver and private key is announced to the public.",
-            "opt3": " Both private key and public key are announced to the public.",
+            "option": [
+                "Private key is kept by the receiver and public key is announced to the public",
+                "Public key is kept by the receiver and private key is announced to the public.",
+                " Both private key and public key are announced to the public."
+            ],
             "answer": " Both private key and public key are announced to the public.",
             "description": "Refer UGC NET CS 2014 Dec"
         },
         {
             "q": "A Trojan horse is ?",
-            "opt1": "A piece of code that can attach itself to other programs in the system and spread to other systems when programs are copied or transferred.",
-            "opt2": "A program that spreads to other computer systems by exploiting security holes like weaknesses in facilities for creation of remote processes",
-            "opt3": " A program that performs a legitimate function that is known to an operating system or its user and also has a hidden component that can be used for nefarious purposes like attacks on message security or impersonation.",
+            "option": [
+                "A piece of code that can attach itself to other programs in the system and spread to other systems when programs are copied or transferred.",
+                "A program that spreads to other computer systems by exploiting security holes like weaknesses in facilities for creation of remote processes",
+                "A program that performs a legitimate function that is known to an operating system or its user and also has a hidden component that can be used for nefarious purposes like attacks on message security or impersonation."
+            ],
             "answer": "A program that performs a legitimate function that is known to an operating system or its user and also has a hidden component that can be used for nefarious purposes like attacks on message security or impersonation.",
             "description": "Refer UGC NET CS 2014 Dec"
         },
         {
             "q": "In cryptography, the following uses transposition ciphers and the keyword is LAYER. Encrypt the following message. (Spaces are omitted during encryption) ->>>  WELCOME TO NETWORK SECURITY ! ?",
-            "opt1": "WMEKREETSILTWETCOOCYONRU!",
-            "opt2": "EETSICOOCYWMEKRONRU!LTWET",
-            "opt3": " LTWETONRU!WMEKRCOOCYEETSI",
+            "option": [
+                "WMEKREETSILTWETCOOCYONRU!",
+                "EETSICOOCYWMEKRONRU!LTWET",
+                " LTWETONRU!WMEKRCOOCYEETSI"
+            ],
             "answer": "EETSICOOCYWMEKRONRU!LTWET",
             "description": "Refer ISRO CS 2018"
         },
         {
             "q": "Avalanche effect in cryptography ?",
-            "opt1": "Is desirable property of cryptographic algorithm",
-            "opt2": "Is undesirable property of cryptographic algorithm",
-            "opt3": " None of the above",
+            "option": [
+                "Is desirable property of cryptographic algorithm",
+                "Is undesirable property of cryptographic algorithm",
+                " None of the above"
+            ],
             "answer": "Is desirable property of cryptographic algorithm",
             "description": "Refer ISRO CS 2018"
         }
