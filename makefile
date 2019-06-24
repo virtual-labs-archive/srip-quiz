@@ -12,6 +12,7 @@ build:
 clean:
 	rm -rf ${BUILD_DIR}
 
-
+run :
+	cd ${BUILD_DIR};python -m SimpleHTTPServer 8000
 
 

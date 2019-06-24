@@ -1,0 +1,47 @@
+#+TITLE: Quiz 
+#+AUTHOR: VLEAD
+#+DATE: [2019-06-24 Mon]
+#+SETUPFILE: ./org-templates/level-0.org
+#+TAGS: boilerplate(b)
+#+EXCLUDE_TAGS: boilerplate
+#+OPTIONS: ^:nil
+
+* Structure of the repository
+  #+BEGIN_EXAMPLE
+  srip-quiz/
+      |--- README.org
+      |--- makefile
+      |--- .gitignore
+      |--- src/
+             |--- quiz.html     
+             |--- libs
+                   |--- evaluate.js
+                   |--- index.css
+                   |--- label.css
+  #+END_EXAMPLE
+  
+* Instructions to run the quiz
+  *STEP 1 :* Clone the repository
+  #+BEGIN_EXAMPLE
+  git clone https://github.com/virtual-labs/srip-quiz.git
+  #+END_EXAMPLE
+
+  *STEP 2 :* Change directory to quiz repository
+  #+BEGIN_SRC 
+  cd srip-quiz
+  #+END_SRC
+  
+  *STEP 3 :* Build the quiz sources  
+  #+BEGIN_EXAMPLE
+  make -k all
+  #+END_EXAMPLE
+
+  *STEP 4 :* Run the quiz server
+  #+BEGIN_EXAMPLE
+  make -k run
+  #+END_EXAMPLE
+
+  *STEP 5 :* Open the quiz in browser
+  #+BEGIN_EXAMPLE
+  http://localhost:8000/quiz.html
+  #+END_EXAMPLE

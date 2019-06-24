@@ -1,2 +1,4 @@
 # srip-quiz
 Quiz for experiments built by SRIP interns
+
+Refer [[./src/index.org][index.org]]
