@@ -1,2 +1,2 @@
 # srip-quiz
-Quiz for experimets built by SRIP interns
+Quiz for experiments built by SRIP interns
