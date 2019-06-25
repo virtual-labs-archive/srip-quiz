@@ -29,6 +29,7 @@ function initialize_array() {
             success: function (data) {
                 $(data.artciles).each(function (a, b) {
                     if (a != 0) {
+                        
                         var obj = new Constructer(b.q, b.answer, b.description);
                         for (var i = 0; i < b.option.length; i++) {
                             obj.option.push(b.option[i]);
@@ -44,6 +45,7 @@ function initialize_array() {
             },
             error: function (jqXHR, status, err) {
                 console.log("Local error callback.");
+                alert.log("Error in loading data from JSON file");
             },
             complete: function (jqXHR, status) {
                 console.log("Local completion callback.");
@@ -326,6 +328,9 @@ function isSubmittable() {
             if (document.getElementById(TempAID1).checked) {
                 status = 1;
             }
+        }
+        if(status==0){
+            break;
         }
     }
     return status;
