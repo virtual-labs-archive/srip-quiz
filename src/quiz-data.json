@@ -253,56 +253,6 @@
             ],
             "answer": "Option 1",
             "description": "Explanation for Question 25"
-        },
-        {
-            "q": "Question 26",
-            "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
-            ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 26"
-        },
-        {
-            "q": "Question 27",
-            "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
-            ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 27"
-        },
-        {
-            "q": "Question 28",
-            "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
-            ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 28"
-        },
-        {
-            "q": "Question 29",
-            "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
-            ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 29"
-        },
-        {
-            "q": "Question 30",
-            "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
-            ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 30"
         }
     ]
 }s
