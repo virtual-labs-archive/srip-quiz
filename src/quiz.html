@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>Quiz</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8"> 
-    <link rel="stylesheet" type="text/css" href="/libs/label.css">
-    <link rel="stylesheet" type="text/css" href="/libs/index.css">
+    <link rel="stylesheet" type="text/css" href="/quiz/label.css">
+    <link rel="stylesheet" type="text/css" href="/quiz/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script type="text/javascript" src="/libs/evaluate.js"></script>
+    <script type="text/javascript" src="/quiz/evaluate.js"></script>
 </head>
-
 <body onload="load()" style="width:100%;height: 100%;background-color: rgb(236, 236, 236)">
-
     <!-- Quiz header -->
     <div class="container">
         <div class="innercontainer">
@@ -25,7 +22,8 @@
                     </div>
                     <div id="startBtn" style="visibility: hidden;">
                         <button id="startBtn" type="button" class="buttonDecor"
-                            style="margin: 4px 2px; padding: 15px 32px;" onclick="startQuiz()">Start Again</button>
+                            style="margin: 4px 2px; padding: 15px 32px;" onclick="startQuiz()">Start Again
+                        </button>
                     </div>
                 </div>
             </div>
@@ -42,7 +40,8 @@
             </div>
             <div id="startBtn" style="text-align: center">
                 <button id="startBtnInit" type="button" class="buttonDecor" style="margin: 4px 2px; padding: 15px 32px;"
-                    onclick="startQuizinit()">Test Yourself</button>
+                    onclick="startQuizinit()">Test Yourself
+                </button>
             </div>
             <div class="quiz-contents">
                 <div>
@@ -57,7 +56,6 @@
 
                     <div id="displayResult" class="hide" style="background-color: inherit"></div>
                     </br>
-
                 </div>
             </div>
             <div class="footer">
