@@ -29,18 +29,19 @@
   This clones the =srip-quiz= repo in your experiment folder
   and then
   + Moves =quiz.html= template at lab and experiment
-    level. This is a template where the quiz questions get
+    level. This is a template where the quiz questions are
     rendered.
-  + Moves =quiz-data.json= at lab and experiment level. This
-    is a file where you include quiz questions along with
-    the options and explanation in Json format.
-  + Moves the quiz sources which are essential to validate
-    the quiz and style the quiz template are moved to
-    =src/quiz= folder.
+  + Moves =quiz-data.json= to =src/quiz=. This is a file
+    where you include quiz questions along with the options
+    and explanation in JSON format.
+  + Moves the quiz sources, which are essential to validate
+    the quiz and style the quiz template to =src/quiz=
+    folder.
   
-
-  *STEP 4 :* Replace the questions in default quiz-data.json
-  with the experiment related questions
+  *STEP 4 :* Move =quiz-data.json= to the experiment folder
+  or at lab level, where you want to include quiz and
+  replace default questions in quiz-data.json with the
+  experiment related questions 
 
   *STEP 5 :* Build the experiment to view the quiz
   #+BEGIN_EXAMPLE

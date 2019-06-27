@@ -6,7 +6,7 @@
 #+EXCLUDE_TAGS: boilerplate
 #+OPTIONS: ^:nil
 
-* Structure of the repository
+* Repository Structure
   #+BEGIN_EXAMPLE
   srip-quiz/
       |--- README.org
@@ -31,7 +31,8 @@
   cd srip-quiz
   #+END_SRC
   
-  *STEP 3 :* Build the quiz sources  
+  *STEP 3 :* Cleans the build if exists and then builds the
+   quiz sources
   #+BEGIN_EXAMPLE
   make -k all
   #+END_EXAMPLE
@@ -41,7 +42,13 @@
   make -k run
   #+END_EXAMPLE
 
-  *STEP 5 :* Open the quiz in browser
+  *STEP 5 :* To view the quiz in browser
   #+BEGIN_EXAMPLE
   http://localhost:8000/quiz.html
   #+END_EXAMPLE
+
+  To remove the build 
+  #+BEGIN_EXAMPLE
+  make -k clean
+  #+END_EXAMPLE
+ 
