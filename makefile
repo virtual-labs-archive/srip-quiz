@@ -22,6 +22,6 @@ clean:
 	rm -rf ${BUILD_DIR}
 
 run :
-	(cd build; python -m SimpleHTTPServer 8000)
+	(cd build; python3 -m http.server)
 
 

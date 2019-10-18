@@ -5,254 +5,254 @@
             "containers":"5"
         },
         {
-            "q": "Question 1",
+            "q": "One multiplexer can take the place of ___________",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "Combinational logic circuits",
+                "Several Ex-NOR gates",
+                "Several SSI logic gates or combinational logic circuits"
             ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 1"
+            "answer": "Several SSI logic gates or combinational logic circuits",
+            "description": "A multiplexer (or MUX) is a device that selects one of several analog or digital input signals and forwards the selected input into a single line, depending on the active select lines. Since many operational behaviour can be performed by using a multiplexer. Whereas, a combinational circuit is a combination of many logic gates which makes the circuit more complex"
         },
         {
-            "q": "Question 2",
+            "q": "How many select lines would be required for an 8-line-to-1-line multiplexer?",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "4",
+                "8",
+                "3"
             ],
-            "answer": "Option 2",
-            "description": "Explanation for Question 2"
+            "answer": "3",
+            "description": "2n input lines, n control lines and 1 output line available for MUX. Here, 8 input lines mean 23 inputs. So, 3 control lines are possible. Depending on the status of the select lines, the input is selected and fed to the output"
         },
         {
-            "q": "Question 3",
+            "q": "Without any additional circuitry an 8:1 MUX can be used to obtain ____________",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "Some but not all Boolean functions of 3 variables",
+                "All function of 3 variables but none of 4 variables",
+                "All functions of 4 variables"
             ],
-            "answer": "Option 3",
-            "description": "Explanation for Question 3"
+            "answer": "All functions of 4 variables",
+            "description": "A 2^n:1 MUX can implement all logic functions of (n+1) variables without any additional circuitry. Thus 8:1 MUX can implement all logic functions of (3+1) variables, for 4 variables there are 16 possible combinations. So to use 8:1 MUX use 3 inputs as select lines of MUX and the 4th input as input of MUX"
         },
         {
-            "q": "Question 4",
+            "q": "If enable input is high then the multiplexer is ______________",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "Enable",
+                "Disable",
+                "High Impedance"
             ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 4"
+            "answer": "Disable",
+            "description": " If enable input is high then the multiplexer is disabled because enable input is in inverted mode always (i.e. E’)"
         },
         {
-            "q": "Question 5",
+            "q": "The inputs/outputs of an analog multiplexer/demultiplexer are ____________",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "Bidirectional",
+                "Unidirectional",
+                "Even parity"
             ],
-            "answer": "Option 2",
-            "description": "Explanation for Question 5"
+            "answer": "Bidirectional",
+            "description": "One multiplexer can be used as demultiplexer. Hence, it is called bidirectional or two-way transmission"
         },
         {
-            "q": "Question 6",
+            "q": "Most demultiplexers facilitate which type of conversion?",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "Decimal-to-hexadecimal",
+                "Single input, multiple outputs",
+                "Odd parity to even parity"
             ],
-            "answer": "Option 3",
-            "description": "Explanation for Question 6"
+            "answer": " Single input, multiple outputs",
+            "description": "A demultiplexer sends a single input to multiple outputs, depending on the select lines. Demultiplexer converts single input into multiple outputs"
         },
         {
-            "q": "Question 7",
+            "q": "How many AND gates are required for a 1-to-8 multiplexer?",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "2",
+                "6",
+                "8"
             ],
-            "answer": "Option 3",
-            "description": "Explanation for Question 7"
+            "answer": "8",
+            "description": " The number of AND gates required will be equal to the number of outputs in a demultiplexer, which are 8"
         },
         {
-            "q": "Question 8",
+            "q": " Which IC is used for the implementation of 1-to-16 DEMUX?",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "IC 74154",
+                "IC 74155",
+                "IC 74139"
             ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 8"
+            "answer": "IC 74154",
+            "description": "IC 74154 is used for the implementation of 1-to-16 DEMUX, whose output is inverted input"
         },
         {
-            "q": "Question 9",
+            "q": "Which of the following combinations of logic gates can decode binary 1101?",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "One 4-input AND gate, one inverter",
+                "One 4-input AND gate, one OR gate",
+                "One 4-input NAND gate, one inverter"
             ],
-            "answer": "Option 2",
-            "description": "Explanation for Question 9"
+            "answer": "One 4-input AND gate, one inverter",
+            "description": "For decoding any number output must be high for that code and this is possible in One 4-input NAND gate, one inverter option only. A decoder is a combinational circuit that converts binary data to n-coded data upto 2n outputs"
         },
         {
-            "q": "Question 10",
+            "q": "What is the indication of a short to ground in the output of a driving gate?",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "Only the output of the defective gate is affected",
+                "There is a signal loss to all load gates",
+                "The node may be stuck in either the HIGH or the LOW state"
             ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 10"
+            "answer": "There is a signal loss to all load gates",
+            "description": "Short to ground in the output of a driving gate indicates of a signal loss to all load gates. This results in information being disrupted and loss of data"
         },
         {
-            "q": "Question 11",
+            "q": "The carry propagation can be expressed as ________",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "Cp = AB",
+                "Cp = A+B",
+                "All but Y0 are LOW"
             ],
-            "answer": "Option 3",
-            "description": "Explanation for Question 11"
+            "answer": "Cp = A+B",
+            "description": "This happens in parallel adders (where we try to add numbers in parallel via more than one adders). A carry propagation occurs when carry from one adder needs to be forwarded to other adder and that second adder is holding the computation (addition) because carry from first adder has not come yet. So, there is a slight delay for second adder and this is known as carry propagation"
         },
         {
-            "q": "Question 12",
+            "q": "3 bits full adder contains ________",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "4 combinational inputs",
+                "6 combinational inputs",
+                "8 combinational inputs"
             ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 12"
+            "answer": "8 combinational inputs",
+            "description": "Full Adder is a combinational circuit with 3 input bits and 2 output bits CARRY and SUM. Three bits full adder requires 23 = 8 combinational circuits"
         },
         {
-            "q": "Question 13",
+            "q": "How many inputs will a decimal-to-BCD encoder have?",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "8",
+                "10",
+                "16"
             ],
-            "answer": "Option 2",
-            "description": "Explanation for Question 13"
+            "answer": "10",
+            "description": "An encoder is a combinational circuit encoding the information of 2n input lines to n output lines, thus producing the binary equivalent of the input. Thus, a Decimal-to-bcd converter has decimal values as inputs which range from 0-9. So, total 10 inputs are there in a decimal-to-BCD encoder"
         },
         {
-            "q": "Question 14",
+            "q": " If we record any music in any recorder, such types of process is called ___________",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "Encoding",
+                "Decoding",
+                "Demultiplexing"
             ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 14"
+            "answer": "Encoding",
+            "description": "If we record any music in any recorder, it means that we are giving data to a recorder. So, such process is called encoding. Getting back the music from the recorded data, is known as decoding"
         },
         {
-            "q": "Question 15",
+            "q": "Can an encoder be a transducer?",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "Yes",
+                "No",
+                "Both are not even related slightly"
             ],
-            "answer": "Option 3",
-            "description": "Explanation for Question 15"
+            "answer": "Yes",
+            "description": "Of course, a transducer is a device which has the capability to emit data as well as to accept. Transducer converts signal from one form of energy to another"
         },
         {
-            "q": "Question 16",
+            "q": "How many OR gates are required for a Decimal-to-bcd encoder?",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "10",
+                "3",
+                "4"
             ],
-            "answer": "Option 2",
-            "description": "Explanation for Question 16"
+            "answer": "4",
+            "description": "An encoder is a combinational circuit encoding the information of 2^n input lines to n output lines, thus producing the binary equivalent of the input"
         },
         {
-            "q": "Question 17",
+            "q": "How many OR gates are required for an octal-to-binary encoder?",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "3",
+                "2",
+                "8"
             ],
-            "answer": "Option 2",
-            "description": "Explanation for Question 17"
+            "answer": "3",
+            "description": "An encoder is a combinational circuit encoding the information of 2n input lines to n output lines, thus producing the binary equivalent of the input. Thus, in octal to binary encoder there are 8 (=23) inputs, thus 3 output lines"
         },
         {
-            "q": "Question 18",
+            "q": "The discrepancy of 0 output due to all inputs being 0 or D0, being 0 is resolved by using additional input known as ___________",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "Enable",
+                "Disable",
+                "Strobe"
             ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 18"
+            "answer": "Enable",
+            "description": "Such problems are resolved by using enable input, which behaves as active if it gets 0 as input since it is an active-low pin"
         },
         {
-            "q": "Question 19",
+            "q": "Can an encoder be called as multiplexer?",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "No",
+                "Yes",
+                "Sometimes"
             ],
-            "answer": "Option 3",
-            "description": "Explanation for Question 19"
+            "answer": "Yes",
+            "description": "A multiplexer or MUX is a combination circuit that contains more than one input line, one output line and more than one selection line. Whereas, an encoder is also considered a type of multiplexer but without a single output line and without any selection lines"
         },
         {
-            "q": "Question 20",
+            "q": " If two inputs are active on a priority encoder, which will be coded on the output?",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "The higher value",
+                "The lower value",
+                "Both of the inputs"
             ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 20"
+            "answer": "The higher value",
+            "description": "An encoder is a combinational circuit encoding the information of 2n input lines to n output lines, thus producing the binary equivalent of the input. If two inputs are active on a priority encoder, the input of higher value will be coded in the output"
         },
         {
-            "q": "Question 21",
+            "q": "Which digital system translates coded characters into a more useful form?",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "Decoder",
+                "Encoder",
+                "Multiplexer"
             ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 21"
+            "answer": "Decoder",
+            "description": "A binary decoder is a combinational logic circuit which decodes binary information from n-inputs to a maximum of 2n outputs. Decoder converts the coded characters into our required data form"
         },
         {
-            "q": "Question 22",
+            "q": "What control signals may be necessary to operate a 1-line-to-16 line decoder?",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "A bubble indicates active-LOW",
+                "A triangle indicates active-HIGH",
+                "A triangle indicates active-LOW"
             ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 22"
+            "answer": "A bubble indicates active-LOW",
+            "description": "A bubble indicates active-LOW in a decoder always. Enable pin of the decoder is usually active-LOW and is triggered on input being at 0"
         },
         {
-            "q": "Question 23",
+            "q": "Which error detection method consists of just one redundant bit per data unit?",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "Simple parity check",
+                "Two-dimensional parity check",
+                "CRC"
             ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 23"
+            "answer": "Simple parity check",
+            "description": "A parity checker is an error detection method used for the purpose of detecting errors that may have been incorporated during transmission. Simple parity check method consists of just one redundant bit per data unit. It is again classified as even parity and odd parity"
         },
         {
-            "q": "Question 24",
+            "q": "The BCD number 101011 has _______ parity",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "Even",
+                "odd",
+                "Undefined"
             ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 24"
+            "answer": "Even",
+            "description": "The given BCD number 101011 has even priority because it has even number of 1’s (i.e. 4)"
         },
         {
-            "q": "Question 25",
+            "q": " Which gates are ideal for checking the parity bits?",
             "option": [
-                "Option 1",
-                "Option 2",
-                "Option 3"
+                "AND",
+                "EX-OR",
+                "EX-NOR"
             ],
-            "answer": "Option 1",
-            "description": "Explanation for Question 25"
+            "answer": "EX-OR",
+            "description": "Exclusive-OR gates are ideal for checking the parity of a binary number because they produce an output when the input has an odd number of 1’s. Therefore, an even-parity input to an EX-OR gate produces a low output, while an odd parity input produces a high output. While, in case of AND, it produces high output when all inputs are 1 else low. Whereas, NAND, does the opposite, by producing low output when all inputs are 1 else high"
         }
     ]
 }
