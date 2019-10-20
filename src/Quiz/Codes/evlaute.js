@@ -45,7 +45,7 @@ function initialize_array() {
             },
             error: function (jqXHR, status, err) {
                 console.log("Local error callback.");
-                alert.log("Error in loading data from JSON file");
+                alert("Error in loading data from JSON file");
             },
             complete: function (jqXHR, status) {
                 console.log("Local completion callback.");
